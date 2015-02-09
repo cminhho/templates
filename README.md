@@ -1,1 +1,1 @@
-# HTML5 Responsive Teamplates
+# HTML5 Responsive Templates
