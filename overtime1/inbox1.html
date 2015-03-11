@@ -1,0 +1,219 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/main1.css">
+	<script type="text/javascript" href="js/main.js"></script>
+</head>
+<body >
+
+<div class="wrap-content container-fluid fade-in-up ng-scope">
+	<div class="inbox ng-scope">
+		<div class="col col email-options ps-container">			
+			<div class="padding-15 ng-scope">
+				<button class="btn btn-block margin-bottom-30 ng-binding">
+					<img src="https://pbs.twimg.com/profile_images/437673243349368832/hMGwk2-v_normal.jpeg" class="profile"><br>
+					Ho Minh Chung
+				 </button>
+				<button class="btn btn-primary btn-block margin-bottom-30 ng-binding">
+					Compose 
+				</button>
+				<p class="email-options-title no-margin">
+					BROWSE
+				</p>
+				<ul class="main-options padding-15">
+					<li>
+						<a href="" class="">
+							<span class="title"><i class="ti-import"></i> Inbox</span>
+							<span class="badge pull-right ng-binding ng-scope">10</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="title"><i class="ti-upload"></i> Sent</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="title"><i class="ti-na"></i> Spam</span>
+							<span class="badge pull-right ng-binding ng-scope" ng-if="(messages |filter: {spam: true}).length">1</span>
+						</a>
+					</li>
+					<li>
+						<a href="">
+							<span class="title"><i class="ti-star"></i> Starred</span>
+							<span class="badge pull-right ng-binding ng-scope" ng-if="(messages |filter: {starred: true}).length">2</span>
+						</a>
+					</li>
+				</ul>
+			</div>		
+		</div>
+		<div class="col email-list">
+			<div class="wrap-list second-nav">
+			<div class="header">
+			  Inbox
+			</div>
+				<div class="wrap-options" id="wrap-options">
+					<div class="messages-options padding-15">
+						<div class="btn-group" dropdown="">
+							<button type="button" class="btn btn-primary btn-wide">
+								Compose
+							</button>
+							<button type="button" class="btn btn-primary dropdown-toggle">
+								<span class="caret"></span>
+							</button>
+							<ul class="dropdown-menu dropdown-light" role="menu">
+								<li>
+									<a href="">
+										<span class="title"><i class="ti-import"></i> Inbox</span>
+										<span class="badge ng-binding ng-scope">10</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<span class="title"><i class="ti-upload"></i> Sent</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<span class="title"><i class="ti-na"></i> Spam</span>
+										<span class="badge ng-binding ng-scope">1</span>
+									</a>
+								</li>
+								<li>
+									<a href="">
+										<span class="title"><i class="ti-star"></i> Starred</span>
+										<span class="badge ng-binding ng-scope">2</span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<button class="btn btn-transparent pull-right open-message-search" ct-toggle="on" target="wrap-options">
+							<i class="ti-search"></i>
+						</button>
+						<button class="btn btn-transparent pull-right close-message-search" ct-toggle="off" target="wrap-options" ng-click="inbox.search = null">
+							<i class="ti-close"></i>
+						</button>
+					</div>
+					<div class="messages-search">
+						<form class="ng-pristine ng-valid">
+							<input type="text" class="form-control underline ng-pristine ng-valid ng-touched" placeholder="Search messages..." >
+						</form>
+					</div>
+				</div>
+				<div class="messages-list" style="position: static"><div>
+					<li class="messages-item ng-scope">
+						<a href="#/app/pages/messages/inbox/50223456">
+							<span title="Mark as starred" class="messages-item-star">
+							<i class="fa fa-star"></i></span>
+							<img alt="Ho Minh Chung" ng-src="assets/images/avatar-6.jpg" class="messages-item-avatar bordered border-primary" src="assets/images/avatar-6.jpg">
+							<span class="messages-item-from ng-binding">Ho Minh Chung</span>
+							<div class="messages-item-time">
+								<span class="text ng-binding">05/25/2014 at 1:37AM</span>
+							</div>
+							<span class="messages-item-subject ng-binding">
+								Reference Request - Nicole Bell
+							</span>
+							<span class="messages-item-content ng-binding">
+								Hi Peter, Thanks for the e-mail. It is always nice to hear from people, especially…
+							</span>
+						</a>
+					</li>
+					<li class="messages-item ng-scope starred" ng-class="{starred: message.starred}" >
+						<a href="#/app/pages/messages/inbox/50223457">
+							<span title="Remove star" class="messages-item-star"><i class="fa fa-star"></i></span>
+							<img alt="Nguyen Toan Nhan" src="assets/images/avatar-9.jpg" class="messages-item-avatar bordered border-primary" src="assets/images/avatar-9.jpg">
+							<span class="messages-item-from ng-binding">Nguyen Toan Nhan</span>
+							<div class="messages-item-time">
+								<span class="text ng-binding">05/25/2014 at 1:37AM</span>
+							</div>
+							<span class="messages-item-subject ng-binding"> <!-- ngIf: message.spam --> Position requirements</span>
+							<span class="messages-item-content ng-binding">Dear Mr. Clarks I am interested in the Coordinator position advertised on XYZ. My resume…</span>
+						</a>
+					</li>
+					
+				</div><div class="ps-scrollbar-x-rail" style="width: 358px; display: none; left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 466px; display: inherit; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 224px;"></div></div></div>
+			</div>
+		</div>
+		
+		<div class="email-reader ps-container ps-active-y" ><div>
+	<div ><div class="message-actions ng-scope">
+	<ul class="actions no-margin no-padding block">
+		<li class="email-list-toggle">
+			<a href="#/app/pages/messages"><i class="fa fa-angle-left"></i> All Inboxes </a>
+		</li>
+		<li class="actions-dropdown">
+			<span class="dropdown" dropdown="" on-toggle="toggled(open)">
+				<a href="" class="dropdown-toggle" dropdown-toggle="" aria-haspopup="true" aria-expanded="false">
+					<i class="caret"></i>
+				</a>
+				<ul class="dropdown-menu dropdown-light">
+					<li>
+						<a href="#">
+							Reply
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Reply all
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Forward
+						</a>
+					</li>
+					<li>
+						<a href="#">
+							Delete
+						</a>
+					</li>
+				</ul> </span>
+		</li>
+		<li class="no-padding">
+			<a class="text-info" href="#">
+				Reply
+			</a>
+		</li>
+		<li class="no-padding">
+			<a href="#">
+				Reply all
+			</a>
+		</li>
+		<li class="no-padding">
+			<a href="#">
+				Forward
+			</a>
+		</li>
+		<li class="no-padding">
+			<a href="#">
+				Delete
+			</a>
+		</li>
+	</ul>
+</div>
+<div class="message-header ng-scope">
+	<img alt="Ho Minh Chung" src="assets/images/avatar-6.jpg" class="message-item-avatar" src="assets/images/avatar-6.jpg">
+	<div class="message-time ng-binding">
+		05/25/2014 at 1:37AM
+	</div>
+	<div class="message-from ng-binding ng-scope">
+		Ho Minh Chung &lt;stark@example.com&gt;
+	</div><!-- end ngIf: message.email -->
+	<div class="message-to">
+		To: Peter Clark
+	</div>
+</div>
+<div class="message-subject ng-binding ng-scope">
+	<!-- ngIf: message.spam --> Reference Request - Nicole Bell
+</div>
+<div class="message-content ng-binding ng-scope"><p>Hi Peter, <br>Thanks for the e-mail. It is always nice to hear from people, especially from you, Scott.</p> <p>I have not got any reply, a positive or negative one, from Seibido yet.<br>Let's wait and hope that it will make a BOOK.</p> <p>Have you finished your paperwork for Kaken and writing academic articles?<br>If you have some free time in the near future, I want to meet you and explain to you our next project.</p> <p>Why not drink out in Hiroshima if we are accepted?<br>We need to celebrate ourselves, don't we?<br>Let's have a small end-of-the-year party!</p> <p>Sincerely, K. Nakagawa</p></div></div>
+		</div><div class="ps-scrollbar-x-rail" style="width: 1043px; display: none; left: 0px; bottom: 3px;"><div class="ps-scrollbar-x" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 285px; display: inherit; right: 3px;"><div class="ps-scrollbar-y" style="top: 0px; height: 180px;"></div></div></div>
+	</div>
+</div>
+
+</body>
+</html>
