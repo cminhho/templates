@@ -1,0 +1,222 @@
+﻿<html class=" js flexbox canvas canvastext webgl no-touch geolocation postmessage websqldatabase indexeddb hashchange history draganddrop websockets rgba hsla multiplebgs backgroundsize borderimage borderradius boxshadow textshadow opacity cssanimations csscolumns cssgradients cssreflections csstransforms csstransforms3d csstransitions fontface generatedcontent video audio localstorage sessionstorage webworkers applicationcache svg inlinesvg smil svgclippaths"><head><meta charset="UTF-8"><meta name="robots" content="noindex"><link rel="canonical" href="http://codepen.io/geoffyuen/pen/szAhu">
+
+<link rel="stylesheet" href="http://s.codepen.io/assets/reset/normalize.css"><script src="http://s.codepen.io/assets/libs/modernizr.js"></script>
+<style class="cp-pen-styles">@import url(http://fonts.googleapis.com/css?family=Raleway:400,700);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
+/* entypo */
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+  font-style: normal;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html {
+  background: #000;
+  height: 100%;
+  font-family: raleway, montserrat, sans-serif;
+  color: #999;
+}
+
+body {
+  height: 100%;
+}
+
+.site-nav {
+  font-size: .9rem;
+  line-height: 1;
+  padding: 0;
+  background: #000;
+  color: #fff;
+  z-index: 50;
+}
+@media (max-width: 480px) {
+  .site-nav--toggle {
+    padding-left: 1.5rem;
+  }
+  .site-nav--list {
+    border-top: 1px solid #333;
+  }
+  .site-nav--list li {
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+    max-height: 0;
+    -webkit-transition: max-height 200ms;
+            transition: max-height 200ms;
+    overflow: hidden;
+  }
+  .site-nav--list li a {
+    padding-left: 1.125rem;
+  }
+}
+@media (min-width: 480px) {
+  .site-nav {
+    display: block;
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+  .site-nav--list {
+    display: block;
+  }
+}
+.site-nav ul, .site-nav li {
+  padding: 0;
+  margin: 0;
+  text-indent: 0;
+  list-style-type: none;
+}
+.site-nav a, .site-nav button {
+  width: 100%;
+  box-sizing: border-box;
+  display: block;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: left;
+  padding: .75em  1.5em .75em 0;
+  white-space: nowrap;
+  border-width: 0;
+  background: transparent;
+  color: #aaa;
+  margin: 0;
+  outline: 0;
+}
+.site-nav a:link, .site-nav a:visited, .site-nav button:link, .site-nav button:visited {
+  color: #aaa;
+}
+.site-nav a:hover, .site-nav button:hover {
+  color: #000;
+  background: cyan;
+}
+.site-nav i {
+  display: inline-block;
+  width: 2.2rem;
+  font-size: 1.25em;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.wrapper {
+  background: #fff;
+  position: relative;
+  z-index: 10;
+  -webkit-transition: margin 200ms;
+          transition: margin 200ms;
+  min-height: 100%;
+}
+@media (min-width: 481px) {
+  .wrapper {
+    margin-left: 2.2rem;
+    z-index: 100;
+  }
+}
+
+.site-header {
+  padding: .63rem 1.5rem;
+  background: #222;
+  color: #888;
+  overflow: hidden;
+}
+.site-header h1 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: 1em;
+  float: left;
+}
+.site-header--current {
+  color: #fff;
+}
+.site-header .account {
+  color: cyan;
+  display: inline-block;
+  padding: 0 1em;
+}
+.site-header .account i {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
+  background: white;
+  text-align: center;
+  border-radius: 50%;
+  vertical-align: top;
+  margin: 0 0 0 .3em;
+}
+@media (min-width: 400px) {
+  .site-header .account {
+    float: right;
+    padding: 0;
+  }
+}
+
+.workspace {
+  padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+@media (max-width: 480px) {
+  .body__expanded .site-nav--list li {
+    max-height: 2.15rem;
+  }
+}
+@media (min-width: 481px) {
+  .body__expanded .wrapper {
+    margin-left: 160px;
+    z-index: 100;
+  }
+}
+
+.small-only {
+  display: none;
+}
+@media (max-width: 370px) {
+  .small-only {
+    display: block;
+  }
+}
+</style></head><body class="">
+<nav id="site-nav" class="site-nav" role="navigation">
+  <button href="#" id="site-nav--toggle" class="site-nav--toggle"><i class="entypo-menu"></i>Menu</button>
+  <ul class="site-nav--list">
+    <li><a href="#"><i class="entypo-gauge"></i>Dashboard</a></li>
+    <li><a href="#"><i class="entypo-download"></i>Work Queue</a></li>
+    <li><a href="#"><i class="entypo-picture"></i>Asset Mgmt</a></li>
+    <li><a href="#"><i class="entypo-doc-text"></i>Reports</a></li>
+    <li><a href="#"><i class="entypo-chart-bar"></i>Admin</a></li>
+    <li><a href="#"><i class="entypo-user"></i>Your Profile</a></li>
+    <li><a href="#"><i class="entypo-logout"></i>Logout</a></li>
+    <li><a href="#"><i class="entypo-lifebuoy"></i>Help</a></li>
+  </ul>
+</nav>
+<div class="wrapper">
+  <header class="site-header">
+    <h1>Generico | <span class="site-header--current">Dashboard</span></h1>
+    <aside class="account">GabeN <i class="entypo-user"></i></aside>
+  </header>
+  <section class="workspace">
+    <p class="small-only">↑ This ugly crap is why you should design mobile first!</p>
+    <h2>Dashboard-like interface</h2>
+    <p>Sort of repsonsive. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum nobis molestias hic eveniet excepturi doloremque commodi eius asperiores iste sint aut pariatur ab praesentium magnam tenetur voluptatem consectetur minima officia.</p>
+    <p>Voluptatum quia earum mollitia rem eaque vero consequuntur sit magni neque voluptatibus tempore omnis dolorum aut perferendis quae repellendus blanditiis assumenda ipsa distinctio sapiente reiciendis totam in corporis dolor minus.</p>
+    <p>Accusantium nisi aspernatur facilis aliquam vitae placeat ducimus soluta culpa expedita provident fuga dolore perferendis quam similique dolorum facere quas qui ipsum repellendus sit quaerat totam quasi ut reprehenderit labore.</p>
+    <p>Accusamus reprehenderit modi excepturi ipsum aliquid dolorum ducimus et incidunt in quas quod dignissimos culpa fugiat voluptatibus architecto dolore adipisci repudiandae quo molestiae rerum ad quasi nam veniam impedit aliquam.</p>
+    <p>Corporis est vero inventore maxime blanditiis quis. Voluptate architecto totam consequatur ipsam sint odit sequi optio porro incidunt distinctio enim laborum aliquid vel eveniet fugit! Adipisci architecto alias esse rem.</p>
+    <p>Fuga fugit nesciunt nam facilis harum dolorem eligendi adipisci. Hic enim velit aliquid est optio sunt ducimus quas porro sapiente ratione accusamus eius nam debitis laborum architecto aperiam tenetur exercitationem.</p>
+    <p>Numquam debitis aliquid maiores cum voluptas est eum porro ducimus non enim ratione ipsam voluptatem nesciunt reprehenderit culpa laudantium quo totam vero dolore rerum quidem nisi voluptates quaerat in alias?</p>
+    <p>Autem laborum ducimus saepe repellat doloremque qui quis consequuntur atque ab dolor minima alias reprehenderit ex beatae ea blanditiis eaque neque commodi voluptates nobis dolore repudiandae eveniet sed pariatur quisquam.</p>
+    <p>Obcaecati magni recusandae odit maxime sint saepe fuga mollitia ipsa debitis itaque enim voluptatem similique et ratione veritatis facere distinctio soluta quibusdam aut voluptas! Velit sed nisi doloremque distinctio necessitatibus.</p>
+  </section>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script>
+$('#site-nav--toggle').click(function () {
+    $('body').toggleClass('body__expanded');
+});
+$(window).resize(function () {
+    $('body').removeClass('body__expanded');
+});
+//@ sourceURL=pen.js
+</script>
+<script src="http://codepen.io/assets/editor/live/css_live_reload_init.js"></script>
+</body></html>

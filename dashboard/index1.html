@@ -1,0 +1,247 @@
+﻿<html class=""><head><meta charset="UTF-8"><meta name="robots" content="noindex"><link rel="canonical" href="http://codepen.io/matthewjamesr/pen/bNWgLK">
+
+<link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"><link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<style class="cp-pen-styles">/** Color Swatches **/
+/** Helpers **/
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.border {
+  padding: 5px 10px 5px 10px;
+  border: 2px solid;
+}
+
+.rounded {
+  border-radius: 30px;
+}
+
+/** Main CSS **/
+body {
+  margin: 0px;
+  background: #ccc;
+}
+
+header {
+  position: relative;
+  height: 65px;
+  background: #eee;
+  padding: 15px;
+}
+header .brand {
+  float: left;
+  font-size: 150%;
+  font-weight: bold;
+  margin-right: 20px;
+}
+header .links {
+  display: inline-block;
+}
+header .links ul {
+  position: absolute;
+  top: 0px;
+}
+header .links li {
+  float: left;
+  height: 65px;
+  line-height: 60px;
+  font-weight: bold;
+  padding: 0px 20px 0px 20px;
+  display: inline;
+}
+header .links li:hover {
+  background: #9fbede;
+}
+header .links .active {
+  background: #6698cb;
+  color: #eee;
+}
+header .links .alert {
+  margin-left: 10px;
+  padding: 3px 7px 3px 7px;
+  border-radius: 50%;
+  font-weight: normal;
+  font-size: 85%;
+  background: #fa5a5a;
+  color: #eee;
+}
+header .controls {
+  display: inline-block;
+}
+header .controls li {
+  line-height: 35px;
+  display: inline;
+}
+header .controls img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin-right: 20px;
+}
+header .controls i {
+  color: #fa5a5a;
+  padding-top: 2px;
+  padding-left: 4px;
+  border: 2px solid;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  font-size: 120%;
+}
+
+.hero {
+  position: absolute;
+  float: left;
+  height: 45%;
+  width: 100%;
+  background: url("http://www.matthewreichardt.com/content/images/2015/01/ghost-bg.jpg") center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+.hero .content {
+  position: relative;
+  margin: 0 auto;
+}
+.hero .content i {
+  color: #ff647f;
+  font-size: 130%;
+}
+.hero .content i span {
+  margin-left: 10px;
+  font-size: 75%;
+  color: #ccc;
+}
+.hero .content .featured {
+  color: #ccc;
+}
+.hero .content .featured .title {
+  text-align: center;
+  letter-spacing: 3px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid;
+}
+.hero .content .featured ul {
+  margin-top: 20px;
+}
+.hero .content .featured li {
+  text-align: right;
+  list-style-type: none;
+}
+.hero .content .featured .active {
+  color: #fff;
+  font-weight: bold;
+}
+
+.social {
+  position: absolute;
+  bottom: 10%;
+}
+.social img {
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  margin-right: 10px;
+  border: 1px solid #fff;
+}
+
+.secondary {
+  position: absolute;
+  top: 100%;
+  width: 100%;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background: #fff;
+}
+.secondary h3 {
+  margin: 0px;
+}
+.secondary .sort {
+  float: right;
+  font-size: 80%;
+}
+.secondary .sort span {
+  float: left;
+  margin-right: 20px;
+}
+.secondary .sort .icon {
+  float: left;
+  margin-right: 10px;
+  height: 15px;
+  width: 15px;
+  border: 3px solid;
+  border-radius: 50%;
+}
+.secondary .sort .red {
+  color: #fa5a5a;
+}
+.secondary .sort .yellow {
+  color: #f0d264;
+}
+.secondary .sort .blue {
+  color: #6698cb;
+}
+.secondary .sort .green {
+  color: #82c8a0;
+}
+</style></head><body>
+
+<section>
+  <header>
+    <div class="container">
+      <div class="brand">Svelte</div>
+      <div class="links pull-left">
+        <ul>
+          <li class="active">Feed</li>
+          <li>Calendar</li>
+          <li>Friends</li>
+          <li>Messages<span class="alert">8</span></li>
+        </ul>
+      </div>
+      <div class="controls pull-right">
+        <ul>
+          <li><img src="http://www.gravatar.com/avatar/f37909b78220a94ebc0f0b6f06b67775.png"></li>
+          <li><i class="fa fa-plus"></i></li>
+        </ul>
+      </div>
+    </div>
+  </header>
+</section>
+<section>
+  <div class="hero">
+    <div class="container">
+      <div class="row">
+        <div style="padding-top: 2.5%;" class="content">
+          <div class="pull-left"><i class="fa fa-heart"><span>10,236</span></i></div>
+          <div class="pull-right featured">
+            <div class="title">FEATURED</div>
+            <ul>
+              <li>Blog Post</li>
+              <li class="active">Event</li>
+              <li>Photo</li>
+              <li>Music</li>
+              <li>Video</li>
+            </ul>
+          </div>
+        </div>
+        <div class="social"><img src="http://www.gravatar.com/avatar/f37909b78220a94ebc0f0b6f06b67775.png"><img src="http://www.gravatar.com/avatar/f37909b78220a94ebc0f0b6f06b67775.png"><img src="http://www.gravatar.com/avatar/f37909b78220a94ebc0f0b6f06b67775.png"></div>
+      </div>
+    </div>
+    <div style="clear: left;" class="secondary">
+      <div class="container">
+        <div class="row">
+          <h3 class="pull-left">Your Pinboard</h3>
+          <div class="sort"><span>SORT BY</span><span class="icon red"></span><span class="icon yellow"></span><span class="icon blue"></span><span class="icon green"></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script src="http://codepen.io/assets/editor/live/css_live_reload_init.js"></script>
+</body></html>

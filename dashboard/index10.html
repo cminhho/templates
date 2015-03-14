@@ -1,0 +1,498 @@
+﻿<html class=""><head><meta charset="UTF-8"><meta name="robots" content="noindex"><link rel="canonical" href="http://codepen.io/DivDax/pen/pveYLB">
+
+<link rel="stylesheet" href="http://s.codepen.io/assets/reset/normalize.css"><link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css"><link rel="stylesheet prefetch" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+<style class="cp-pen-styles">html, body {
+  height: 100%;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font: 14px/20px "Proxima Nova", "Helvetica Neue", arial, sans-serif;
+  color: #676e74;
+  background: #E9EEF1;
+}
+
+a {
+  color: #1F2123;
+}
+a:hover {
+  color: #0e6da7;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #1F2123;
+}
+
+h1, h2 {
+  color: #4f5459;
+  margin: 5px 0 20px 0;
+}
+
+h1 {
+  font-size: 25px;
+}
+h1.bg {
+  font-size: 17px;
+  background: #dde4e9;
+  padding: 12px 20px;
+  margin: 10px -20px 20px;
+}
+
+h2 {
+  font-size: 20px;
+}
+
+hr {
+  border-color: #cad6dd;
+}
+
+.big {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: 300;
+}
+
+.light {
+  color: #b6babe;
+}
+
+#nav {
+  position: fixed;
+  z-index: 10;
+  top: 0;
+  bottom: 0;
+  width: 180px;
+  color: #76818c;
+  background: #1F2123;
+}
+#nav a {
+  color: #737E89;
+  text-decoration: none;
+}
+#nav ul {
+  list-style-type: none;
+  padding: 12px;
+  margin: 0;
+  font-weight: 600;
+}
+#nav ul li.head {
+  color: #50585f;
+  font-size: 11px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 12px;
+}
+#nav ul li a {
+  display: block;
+  padding: 6px 12px;
+  margin: 5px 0;
+  border-radius: 2px;
+  -webkit-transition: all .15s ease;
+          transition: all .15s ease;
+}
+#nav ul li a i {
+  margin-right: 8px;
+}
+#nav ul li a:hover {
+  background: #2b2e31;
+}
+#nav ul li.active a {
+  color: #fff;
+  background: #2DA5EE;
+}
+#nav section {
+  padding: 15px;
+  font-size: 12px;
+  line-height: 16px;
+}
+#nav .stats {
+  position: absolute;
+  width: 100%;
+  bottom: 20px;
+}
+@media (max-width: 767px), (max-height: 800px) {
+  #nav .stats {
+    display: none;
+  }
+}
+#nav .stats .title {
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+#nav .stats .progress-bar {
+  margin-bottom: 8px;
+}
+
+#main {
+  margin-left: 180px;
+}
+#main header {
+  background: #fff;
+  padding: 20px;
+  border-bottom: 1px solid #d9e2e7;
+}
+#main header h1 {
+  color: #737E89;
+  font-size: 17px;
+  font-weight: 400;
+  margin: 0;
+}
+#main #content {
+  padding: 20px;
+}
+
+@media (max-width: 767px) {
+  #nav {
+    width: 66px;
+  }
+  #nav li.head,
+  #nav li span {
+    display: none;
+  }
+
+  #main {
+    margin-left: 66px;
+  }
+}
+@media (max-width: 320px) {
+  #nav {
+    width: 100%;
+    bottom: auto;
+  }
+  #nav li.head,
+  #nav li span {
+    display: none;
+  }
+  #nav ul {
+    padding: 3px 5px;
+  }
+  #nav li {
+    display: inline-block;
+  }
+  #nav li a {
+    padding: 6px 5px;
+  }
+  #nav li a i {
+    margin: 0 !important;
+  }
+
+  #main {
+    padding: 50px 0 0 0;
+    margin: 0;
+  }
+}
+.box {
+  position: relative;
+  background: #fff;
+  box-sizing: border-box;
+  margin-bottom: 20px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 2px;
+}
+.box h4 {
+  margin: 0;
+}
+.box .header {
+  padding: 20px 20px 0;
+}
+.box .body {
+  padding: 15px 20px;
+}
+.box .footer {
+  padding: 10px 20px;
+  border-top: 1px solid #E9EEF1;
+  background: #f5f8f9;
+}
+.box .footer ul {
+  margin: 0;
+}
+.box .footer ul li.like a {
+  color: #676e74;
+}
+.box .footer ul li.like a:hover {
+  color: #2DA5EE;
+}
+
+.posts {
+  position: relative;
+  margin-bottom: 50px;
+}
+.posts::before {
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 29px;
+  content: '';
+  width: 2px;
+  height: 100%;
+  background: #dcdee0;
+}
+@media (max-width: 767px) {
+  .posts::before {
+    left: 25px;
+  }
+}
+@media (max-width: 320px) {
+  .posts::before {
+    left: 12px;
+  }
+}
+.posts .post .avatar {
+  float: left;
+  width: 60px;
+}
+.posts .post .message {
+  position: relative;
+  margin-left: 80px;
+}
+.posts .post .message.highlight::before {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  background: #2DA5EE;
+}
+.posts .post .message.highlight .box {
+  background: #eaf6fd;
+  border-color: #2DA5EE;
+  box-shadow: 0 1px 5px rgba(45, 165, 238, 0.3);
+}
+.posts .post .message.highlight .box .footer {
+  background: #fff;
+}
+.posts .post .message.highlight .box::before {
+  border-color: #2DA5EE;
+  background: #eaf6fd;
+}
+.posts .post .box {
+  border: 1px solid #CAD5E0;
+}
+.posts .post .box h4 {
+  margin: 0;
+}
+.posts .post .box::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 21px;
+  left: -6px;
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-left: 1px solid #CAD5E0;
+  border-top: 1px solid #CAD5E0;
+  -webkit-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+}
+@media (max-width: 767px) {
+  .posts .post .avatar {
+    width: 50px;
+  }
+  .posts .post .message {
+    margin-left: 70px;
+  }
+}
+@media (max-width: 320px) {
+  .posts .post .avatar {
+    width: 25px;
+  }
+  .posts .post .message {
+    margin-left: 35px;
+  }
+  .posts .post .box::before {
+    top: 8px;
+  }
+}
+
+.love {
+  text-align: center;
+  color: #80878e;
+  padding: 20px 0;
+}
+.love .fa-heart {
+  margin: 0 6px;
+  font-size: 16px;
+}
+
+.btn-default {
+  color: #fff;
+  background: #c0c8ce;
+}
+.btn-default:hover {
+  color: #fff;
+  background: #2da5ee;
+  border-color: #2da5ee;
+}
+
+.progress-bar {
+  position: relative;
+  width: 100%;
+  height: 3px;
+  background: #373b3e;
+}
+.progress-bar .progress-bar-inner {
+  position: absolute;
+  height: 100%;
+  background: #2DA5EE;
+}
+</style></head><body>
+
+<!-- Author: Heiko Klingele-->
+<!-- E-Mail: klingele@designwerkstatt24.de-->
+<div id="nav">
+  <ul>
+    <li class="head">General</li>
+    <li><a href="#"><i class="fa fa-fw fa-dashboard"></i><span>Dashboard</span></a></li>
+    <li class="active"><a href="#"><i class="fa fa-fw fa-inbox"></i><span>Inbox</span></a></li>
+    <li><a href="#"><i class="fa fa-fw fa-male"></i><span>My Profile</span></a></li>
+  </ul>
+  <ul class="hidden-xs">
+    <li class="head">Community</li>
+    <li><a href="#"><i class="fa fa-fw fa-comments"></i><span>Forum</span></a></li>
+    <li><a href="#"><i class="fa fa-fw fa-calendar"></i><span>Events</span></a></li>
+    <li><a href="#"><i class="fa fa-fw fa-bullhorn"></i><span>Jobs</span></a></li>
+  </ul>
+  <ul class="hidden-xs">
+    <li class="head">Documents</li>
+    <li><a href="#"><i class="fa fa-fw fa-file-text"></i><span>Sedcards</span></a></li>
+    <li><a href="#"><i class="fa fa-fw fa-camera"></i><span>Pictures</span></a></li>
+  </ul>
+  <ul class="hidden-xs">
+    <li class="head">Management</li>
+    <li><a href="#"><i class="fa fa-fw fa-user"></i><span>User</span></a></li>
+    <li><a href="#"><i class="fa fa-fw fa-users"></i><span>Roles</span></a></li>
+    <li><a href="#"><i class="fa fa-fw fa-cog"></i><span>Settings</span></a></li>
+  </ul>
+  <section class="stats">
+    <div class="title">Messages</div>
+    <div class="progress-bar">
+      <div style="width:10%" class="progress-bar-inner"></div>
+    </div>
+    <div class="title">Storage</div>
+    <div class="progress-bar">
+      <div style="width:35%" class="progress-bar-inner"></div>
+    </div>
+  </section>
+</div>
+<div id="main">
+  <header>
+    <h1>This is pretty neat</h1>
+  </header>
+  <div id="content">
+    <h1>Responsive Interface</h1>
+    <div class="box">
+      <div class="body big">Resize your Browser to see the responsivenes.</div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+        <div class="box">
+          <div class="header">
+            <h4>Box TItle</h4>
+          </div>
+          <div class="body">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et tempor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="box">
+          <div class="header">
+            <h4>Box TItle</h4>
+          </div>
+          <div class="body">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et tempor.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+        <div class="box">
+          <div class="header">
+            <h4>Box TItle</h4>
+          </div>
+          <div class="body">
+            <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et tempor.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <h1 class="bg">Latest Messages</h1>
+    <div class="posts">
+      <div class="post">
+        <div class="avatar"><a><img src="http://38.media.tumblr.com/avatar_2e7c40476b71_128.png" class="img-responsive img-circle"></a></div>
+        <div class="message">
+          <div class="box">
+            <div class="header">
+              <h4><a href="#">Username</a></h4>
+            </div>
+            <div class="body">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            </div>
+            <div class="footer">
+              <ul class="list-inline light">
+                <li class="like"><a href="#"><i class="fa fa-thumbs-up"></i></a></li>
+                <li>12 hours ago</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="avatar"><a><img src="http://38.media.tumblr.com/avatar_2e7c40476b71_128.png" class="img-responsive img-circle"></a></div>
+        <div class="message">
+          <div class="box">
+            <div class="header">
+              <h4><a href="#">Username</a></h4>
+            </div>
+            <div class="body">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            </div>
+            <div class="footer">
+              <ul class="list-inline light">
+                <li class="like"><a href="#"><i class="fa fa-thumbs-up"></i></a></li>
+                <li>12 hours ago</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="avatar"><a><img src="http://38.media.tumblr.com/avatar_2e7c40476b71_128.png" class="img-responsive img-circle"></a></div>
+        <div class="message highlight">
+          <div class="box">
+            <div class="header">
+              <h4><a href="#">Username</a></h4>
+            </div>
+            <div class="body">
+              <p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.</p>
+            </div>
+            <div class="footer">
+              <ul class="list-inline light">
+                <li class="like"><a href="#"><i class="fa fa-thumbs-up"></i></a></li>
+                <li>12 hours ago</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="post">
+        <div class="avatar"><a><img src="http://www.vbulletin.com/forum/core/images/default/default_avatar_medium.png" class="img-responsive img-circle"></a></div>
+        <div class="message">
+          <div class="form-group">
+            <textarea rows="3" placeholder="Write a comment..." class="form-control"></textarea>
+          </div>
+          <div class="form-group">
+            <input type="button" value="Post Your Reply" class="btn btn-default">
+          </div>
+        </div>
+      </div>
+    </div>
+    <hr>
+    <h4 class="love">Made with<i class="fa fa-heart"></i></h4>
+  </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://codepen.io/assets/editor/live/css_live_reload_init.js"></script>
+</body></html>

@@ -1,0 +1,280 @@
+﻿<html class=""><head><meta charset="UTF-8"><meta name="robots" content="noindex"><link rel="canonical" href="http://codepen.io/paulftw/pen/AhgGz">
+
+
+<style class="cp-pen-styles">html, body {
+  background-color: #EDEDED;
+  margin: 0;
+  padding: 0;
+}
+
+.topbar {
+  height: 64px;
+  background-color: #FF7E00;
+  color: #fff;
+  font-family: sans-serif;
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+.topbar .logo-outer {
+  float: left;
+  width:0;
+  position: relative;
+  z-index: -1;
+}
+.topbar .logo {
+  vertical-align: middle; 
+  text-align: center;
+  font-weight: 600;
+  font-size: 24px;
+  height: 64px;
+  margin-left: 40px;
+  line-height: 64px;
+}
+
+.topbar .statusbuttons {
+  display: table-row;
+  list-style: none;
+  float: right;
+  margin: 0;
+  padding: 0;
+}
+.topbar .statusbuttons .btn {
+  float: left;
+  background-color: #FF7E00;
+  border-right: 1px solid #DE6E00;
+  border-left: 1px solid #FFBF80;
+  height: 64px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  width: 82px;
+}
+.topbar .statusbuttons .btn:first-child {
+    border-left: none;
+}
+
+.topbar .statusbuttons .btn:hover > span,
+.topbar .statusbuttons .btn:hover > i {
+  color: #fff;
+  cursor: pointer;
+  text-shadow: #fff 0 0 4px, #fff 0 0 10px;
+}
+
+.topbar .statusbuttons .btn.logindetails:hover * {
+  text-shadow: none;
+}
+
+.statusbuttons .avatar {
+  float: left;
+  margin: 4px 10px;
+}
+
+.statusbuttons .name {
+  font-size: 24px;
+  margin: 4px 0 0;
+  padding: 0;
+
+}
+
+.logindetails {
+  min-width: 300px;
+}
+
+.lastlogin {
+  display: block;
+  font-size: 12px;
+  color: #FFC5A3;
+}
+
+.statusbuttons .btn.inbox {
+  width: 
+}
+
+.statusbuttons .btn span.label {
+  line-height: 64px;
+}
+
+.btn span.label.pull-left {
+  display: block;
+  margin: 0 5px 0 20px;
+}
+
+.statusbuttons .btn .icon-horizontal {
+  text-align: left;
+  margin-left: 5px;
+}
+
+.btn .icon {
+  text-align: center;
+  display: block;
+  line-height: 62px;
+  color: #FFBF80;
+  font-size: 24px;
+  margin: 0 5px 0 5px;
+}
+
+.statusbuttons li.btn .label-bottom {
+  display: block;
+  position: relative;
+  color: #FFA467;
+  font-size: 12px;
+  top: -42px;
+  margin: 0;
+  text-align: center;
+}
+
+.sidebar {
+  border: 1px solid #DBD2D2;
+  -webkit-box-shadow: 0px 4px 2px 3px rgba(100, 100, 100, 0.3);
+  display: block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: fixed;
+  top: 64px;
+  left: 0;
+  height: 100%;
+}
+
+.sidebar li {
+  border-bottom: 1px solid #C7C7C7;
+  color: #7A736D;
+  cursor: pointer;
+  height: 64px;
+  width: 100px;
+}
+.sidebar li.active {
+  background-color: #7A736D;
+  color: #fff;
+}
+.sidebar li:hover * {
+  color: #333;
+  text-shadow: #333 0 0 4px, #555 0 0 10px;
+}
+.sidebar li span {
+  display: block;
+  font-size: 12px;
+  text-align: center;
+}
+.sidebar li .icon {
+  display: block;
+  padding-top: 9px;
+  text-align: center;
+  font-size: 29px;
+}
+
+.pagebody {
+  color: #7A736D;
+  margin-left: 130px;
+  margin-top: 70px;
+  font-family: sans-serif;
+}
+
+.pagebody .panel {
+  background-color: #fff;
+  border-radius: 6px;
+  box-shadow: 0 0 10px 2px rgba(50, 50, 50, 0.25);
+  display: inline-block;
+  font-size: 18px;
+  height: 400px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  padding: 9px;
+  width: 525px;
+}
+
+.panel .title {
+  width: 100%;
+}
+.panel .title .close {
+  display: inline-block;
+  pull-right;
+}</style></head><body>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.min.css" rel="stylesheet">
+<div class="topbar">
+  <div class="logo-outer">
+    <div class="logo">HOODSWEENEY</div>
+  </div>
+  <ul class="statusbuttons">
+    <li class="btn logindetails">
+      <img class="avatar" src="http://placekitten.com/g/55/55">
+      <h1 class="name">Ron Burgundy</h1>
+      <span class="lastlogin">Last login: 4 days ago at 3:45pm</span>
+    </li>
+    <li class="btn inbox">
+      <span class="label pull-left">5</span>
+      <i class="icon icon-horizontal icon-envelope-alt"></i>
+      
+    </li>
+    <li class="btn">
+      <i class="icon icon-desktop"></i>
+      <span class="label label-bottom">Show me</span>
+    </li>
+    <li class="btn">
+      <i class="icon icon-phone"></i>
+      <span class="label label-bottom">Contact</span>
+    </li>
+    <li class="btn">
+      <i class="icon icon-off"></i>
+      <span class="label label-bottom">Log out</span>
+    </li>
+  </ul>
+</div>
+  
+<ul class="sidebar">
+  <li>
+    <i class="icon icon-home"></i>
+    <span>Home</span>
+  </li>
+  <li class="active">
+    <i class="icon icon-dashboard"></i>
+    <span>Dashboard</span>
+  </li>
+  <li>
+    <i class="icon icon-bar-chart"></i>
+    <span>Portfolio</span>
+  </li>
+  <li>
+    <i class="icon icon-rss"></i>
+    <span>News</span>
+  </li>
+  <li>
+    <i class="icon icon-user"></i>
+    <span>My Details</span>
+  </li>
+  <li>
+    <i class="icon icon-edit"></i>
+    <span>Applications</span>
+  </li>
+  <li>
+    <i class="icon icon-wrench"></i>
+    <span>Tools</span>
+  </li>
+  <li>
+    <i class="icon icon-phone"></i>
+    <span>Contact Us</span>
+  </li>
+</ul>
+<div class="pagebody">
+  <h1>
+    Dashboard
+  </h1> 
+  <div class="panel">
+    <div class="title">Portfolio Allocation<span class="close pull-right"><i class="icon-check-minus"></i></span></div>
+  </div>
+
+  <div class="panel">
+    <div class="title">Top 10 Holdings<span class="close pull-right"><i class="icon-check-minus"></i></span></div>
+  </div>
+
+  <div class="panel">
+    <div class="title">Portfolio Performance vs CPI<span class="close pull-right"><i class="icon-check-minus"></i></span></div>
+  </div>
+  
+  
+</div>
+
+<script src="http://codepen.io/assets/editor/live/css_live_reload_init.js"></script>
+</body></html>
