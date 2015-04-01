@@ -1,0 +1,496 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Static Top Navbar Example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" href="styles/css/bootstrap.min.css">
+  <link rel="stylesheet" href="layout.css">
+
+    <!-- Custom styles for this template -->
+	<style type="text/css">
+ 
+	</style>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+		  
+		  <a class="navbar-brand glyphicon glyphicon-menu-hamburger" 
+		  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
+		  style="font-size: 16px"></a>
+		  <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+          <a class="navbar-brand" href="#">Taskcenter</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dashboards <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li> 
+				<li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+				<li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Issues <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+			  <li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Setting <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+					<li><a href="#">One more separated link</a></li>
+				  </ul>
+				</li>
+				
+				<li class="dropdown">
+				  <a style="  padding-top: 8px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+					<img src="useravatar.png" alt="" style="vertical-align: middle;"/>
+				  <span class="caret"></span></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+					<li><a href="#">One more separated link</a></li>
+				  </ul>
+				</li>
+          </ul>
+		  <form class="navbar-form navbar-right">
+            <input type="text" class="form-control search" placeholder="Search...">
+          </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+
+	<div class='toolbar'>
+	  <div class='container'>
+		<div class='button-group'>
+		  <button>
+			<span class='glyphicon glyphicon-time'></span>
+		  </button>
+		</div>
+		<div class='button-group'>
+		  <button class='subscribe'>
+			<span class='glyphicon glyphicon-calendar'></span>
+			<span class='glyphicon glyphicon-plus-sign'></span>
+		  </button>
+		  <button>
+			<span class='glyphicon glyphicon-list-alt'></span>
+		  </button>
+		</div>
+		Team Schedule
+	  </div>
+	</div>
+	
+    <div class="container">
+      <div class="r">
+  <h2>This Week</h2>
+  <ul class="schedule">
+    <li class="past">
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">Christian's House</span>
+      </p>
+    </li>
+    <li class="next">
+      <label class="date">
+        <span class="weekday">FRI</span>
+        <span class="day">26</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Ice Time</h3>
+      <p>
+        <span class="duration">6:30 am to 8:15am</span>
+        <span class="location">Millwoods Rec Centre</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">SAT</span>
+        <span class="day">27</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Game vs. RTS Tough Guys</h3>
+      <p>
+        <span class="duration">6:30pm to 8:30pm</span>
+        <span class="location">Oliver Arena</span>
+      </p>
+    </li>
+  </ul>
+  <h2>Next Week</h2>
+  <ul class="schedule">
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+  </ul>
+  <h2>Within 4 Weeks</h2>
+  <ul class="schedule">
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+  </ul>
+  <h2>Future</h2>
+  <ul class="schedule">
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">La Villa</span>
+      </p>
+    </li>
+  </ul>
+</div>
+
+    </div> <!-- /container -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  </body>
+</html>
