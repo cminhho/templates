@@ -1,0 +1,132 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<style type="text/css">
+	/*
+@mixin tilt($rotate, $v, $h) {
+  -webkit-transform: rotate($rotate) tranlate($v, $h);
+      -ms-transform: rotate($rotate) tranlate($v, $h);
+          transform: rotate($rotate) tranlate($v, $h);
+}*/
+body {
+  color: #20201f;
+  background: #fffbeb;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  line-height: 1.2em;
+  margin: 0;
+}
+
+h1 {
+  font-size: 8em;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 4em;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 2em;
+  font-weight: 400;
+  letter-spacing: 2px;
+}
+
+h4 {
+  font-size: 1.4em;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.red {
+  color: #cf3b28;
+}
+
+.border-top {
+  border-top: 20px solid #cf3b28;
+  display: inline-block;
+  padding-top: 10px;
+}
+
+.border-left {
+  border-left: 20px solid #cf3b28;
+  padding-left: 20px;
+  display: inline-block;
+}
+
+.border-bottom {
+  border-bottom: 20px solid #cf3b28;
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.border-right {
+  border-right: 20px solid #cf3b28;
+  padding-right: 20px;
+  display: inline-block;
+}
+
+.center {
+  top: 50%;
+  left: 50%;
+  position: fixed;
+  -webkit-transform: translate(-50%, -15%);
+  -ms-transform: translate(-50%, -15%);
+  transform: translate(-50%, -15%);
+}
+
+.group1 {
+  -webkit-transform: rotate(-45deg) translate(0, -50%);
+  -ms-transform: rotate(-45deg) translate(0, -50%);
+  transform: rotate(-45deg) translate(0, -50%);
+}
+
+.group2 {
+  -webkit-transform: rotate(45deg) translate(34%, -80%);
+  -ms-transform: rotate(45deg) translate(34%, -80%);
+  transform: rotate(45deg) translate(34%, -80%);
+}
+
+.group3 {
+  -webkit-transform: rotate(-45deg) translate(100%, -225%);
+  -ms-transform: rotate(-45deg) translate(100%, -225%);
+  transform: rotate(-45deg) translate(100%, -225%);
+}
+
+.group4 {
+  -webkit-transform: rotate(45deg) translate(-60%, -45%);
+  -ms-transform: rotate(45deg) translate(-60%, -45%);
+  transform: rotate(45deg) translate(-60%, -45%);
+}
+</style>
+</head>
+<body>
+	<link href='http://fonts.googleapis.com/css?family=Oswald:400,700,300' rel='stylesheet' type='text/css'>
+
+<div class="center">
+  <div class="group1">
+    <h1 class="border-bottom border-top">Kandinsky</h1>
+  </div>
+  <div class="group2">
+    <h2 class="border-right">Anhaltischer</h2>
+    <h3>Kunstverein</h3>
+    <h3>Johannisstr</h3>
+  </div>
+  <div class="group3">
+    <h4 class="red">Gemalde Aquarelle</h4>
+    <h3>Ausstellung</h3>
+  </div>
+  <div class="group4 red">
+    <h1>60</h1>
+    <h4>Geburtstag</h4>
+  </div>
+</div>
+
+</body>
+</html>
