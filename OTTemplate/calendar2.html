@@ -1,0 +1,527 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700,800' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="styles/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css" />
+	
+	<link rel="stylesheet" href="common.css" />
+</head>
+<body>
+	<style type="text/css">
+	* {
+  font-family: 'Open Sans', sans-serif;
+}
+div,
+ul,
+li {
+  list-style-type: none;
+}
+.planner {
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+  border-radius: 0px;
+  overflow: hidden;
+}
+.calendar {
+  padding: 10px;
+  background-color: #333333;
+}
+.calendar-header {
+  color: #a7a7a7;
+  border-bottom: 1px solid #484848;
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  line-height: 0px;
+  font-size: 0px;
+  padding-bottom: 10px;
+}
+.calendar-header span,
+.calendar-header a {
+  display: inline-block;
+  font-size: 36px;
+  font-weight: 200;
+  text-align: center;
+  line-height: 36px;
+}
+.calendar-header a:hover {
+  color: #98cd60;
+  cursor: pointer;
+}
+.calendar-header::after {
+  content: '';
+  display: inline-block;
+  width: 100%;
+}
+table {
+  width: 100%;
+  padding: 10px;
+  color: #9d9d9d;
+}
+th {
+  font-weight: normal;
+  font-size: 14px;
+  color: #5b5b5b;
+}
+td {
+  font-weight: normal;
+  font-size: 12px;
+  text-align: center;
+}
+td > span {
+  display: inline-block;
+  text-align: center;
+  padding: 3px;
+  margin: 0px;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+}
+td > span:hover {
+  font-weight: bold;
+}
+td > span.active {
+  border: 2px solid #98cd60;
+  border-radius: 30px;
+}
+.schedule {
+  margin: 0;
+}
+.tabs {
+  margin: 0;
+  padding: 0;
+  text-align: justify;
+  line-height: 0px;
+  font-size: 0px;
+  background-color: #6b6b6b;
+}
+.tabs .tab {
+  display: inline-block;
+  width: 33.3333%;
+  background-color: #6b6b6b;
+  text-align: center;
+  color: #333333;
+  margin: 0;
+  padding: 0;
+  border: 0px none;
+  line-height: 38px;
+  font-size: 14px;
+  transition: background 0.2s;
+}
+.tabs .tab.active {
+  background-color: #999999;
+  color: #ffffff;
+  font-weight: 600;
+}
+.tabs .tab.active:hover {
+  background-color: #999999;
+}
+.tabs .tab:hover {
+  background-color: #777777;
+}
+.tabs .tab a {
+  color: inherit;
+  text-decoration: none;
+}
+.tabs::after {
+  content: '';
+  width: 100%;
+  display: inline-block;
+}
+.schedule-list {
+  padding: 20px;
+  margin-left: 37px;
+  border-left: 2px solid #cccccc;
+  display: block;
+}
+.schedule-item {
+  display: block;
+  margin-bottom: 50px;
+  padding: 0;
+  clear: both;
+  min-height: 100px;
+  overflow: visible;
+}
+.schedule-item:last-child {
+  margin-bottom: 10px;
+  min-height: 30px;
+}
+.schedule-item .time {
+  display: block;
+  float: left;
+  margin-left: -41px;
+  width: 36px;
+  height: 36px;
+  border: 2px solid #cccccc;
+  background-color: #ffffff;
+  color: #cccccc;
+  border-radius: 40px;
+  text-align: center;
+  padding: 0px;
+  line-height: 25px;
+}
+.schedule-item .time span {
+  font-size: 12px;
+  height: 10px;
+  margin: auto;
+  display: block;
+}
+.schedule-item .description {
+  display: block;
+  float: left;
+  width: 305px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: #fd9a4a;
+  font-size: 14px;
+  overflow: visible;
+}
+.schedule-item .description .description-content {
+  margin-top: 5px;
+}
+.schedule-item .description .description-content p {
+  font-size: 12px;
+  margin: 0;
+  color: #c5c5c5;
+}
+.schedule-item .description .description-content .contact-list {
+  margin: 0;
+  margin-top: 10px;
+  padding: 0;
+}
+.schedule-item .description .description-content .contact-list .contact {
+  overflow: hidden;
+  display: block;
+  float: left;
+  margin: 0;
+  padding: 0;
+  border: 2px solid rgba(152, 205, 96, 0.25);
+  border-radius: 60px;
+  width: 56px;
+  height: 56px;
+  text-decoration: none;
+  text-align: center;
+  margin-right: 10px;
+  transition: all 0.2s;
+}
+.schedule-item .description .description-content .contact-list .contact img {
+  width: 60px;
+  height: 60px;
+}
+.schedule-item .description .description-content .contact-list .contact:hover {
+  border: 2px solid #98cd60;
+}
+.schedule-item .description .description-content .contact-list .contact.add-contact {
+  color: #98cd60;
+  font-size: 20px;
+  line-height: 60px;
+}
+.schedule-item .description .description-content .contact-list .contact.add-contact a {
+  color: inherit;
+  text-decoration: none;
+}
+.schedule-item .description .description-content .contact-list .contact.add-contact:hover {
+  background-color: rgba(152, 205, 96, 0.25);
+}
+.schedule-item.free .time {
+  border: 2px solid #98cd60;
+}
+.schedule-item.free .description .description-header {
+  background-color: #ffffff;
+  color: #c5c5c5;
+  display: block;
+  float: left;
+}
+.schedule-item.free .description .description-content {
+  margin-left: 5px;
+  margin-top: 0;
+  content: '';
+  width: 215px;
+  display: block;
+  float: right;
+  background-image: url(https://dl.dropboxusercontent.com/u/2915418/filler.png);
+  background-repeat: no-repeat;
+  background-position: right center;
+}
+footer {
+  margin-top: 30px;
+  color: #c5c5c5;
+  display: block;
+  text-align: center;
+}
+footer a {
+  color: #98cd60;
+  text-decoration: none;
+}
+
+	</style>
+<div class="page">
+<nav class="navbar navbar-default navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+		  
+		  <a class="navbar-brand glyphicon glyphicon-menu-hamburger" 
+		  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
+		  style="font-size: 16px"></a>
+		  <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+          <a class="navbar-brand" href="#">Task Managerment</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="nav navbar-form navbar-left">
+            <input type="text" class="form-control search" placeholder="Search...">
+          </form>
+		  <ul class="nav navbar-nav">
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tasks <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li> 
+				<li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+				<li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Issues</a>
+            </li>
+			<li class="dropdown">
+              <a style="padding: 3px 10px;border: 1px solid;height: 30px;margin-top: 8px;" class="btn btn-md" href="" role="button">Create issue</a>
+            </li>
+          </ul>
+          
+		  
+		  <ul class="nav navbar-nav navbar-right">
+		  <li class="dropdown">
+				  <a style="  padding-top: 10px; height: 44px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+					<img src="useravatar.png" alt="" style="vertical-align: middle;"/> <span>cminhho</span>
+				  </a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+		  <li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-inbox"></i></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+			  <li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bell"></i></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				<!--span class="caret"></span-->
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> </a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+				
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+ 
+  <div class="main"  style="overflow: auto">
+    <div class="nav">
+		<div class="text-center">
+		</div>
+	  
+      <div class="menu">
+        <div class="title">Navigation</div>
+        <ul>
+          <li> <i class="fa fa-home"></i>Home</li>
+          <li><i class="fa fa-signal"></i>Activity</li>
+          <li class="active"> <i class="fa fa-tasks"></i>Manage Tasks</li>
+          <li> <i class="fa fa-envelope"></i>Messages</li>
+        </ul>
+      </div>
+    </div>
+    <div class="view" style="position: relative; overflow: auto; height: 100%;">
+      <div class="viewHeader">
+        <div class="title">Create Tasks</div>
+
+      </div>
+      <div class="content" >
+		<div class="">
+
+		
+		
+
+<div class="planner">
+	<div class="calendar">
+		<div class="calendar-header">
+			<a class="btn btn-prev">
+        <i class="icon-angle-left"></i>
+			</a>
+			<span>July</span>
+			<a class="btn btn-next">
+				<i class="icon-angle-right"></i>
+			</a>
+		</div>
+
+		<table>
+			<thead>
+				<tr>
+					<th>SUN</th>
+					<th>MON</th>
+					<th>TUE</th>
+					<th>WED</th>
+					<th>THU</th>
+					<th>FRI</th>
+					<th>SAT</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><span>30</span></td>
+					<td><span>1</span></td>
+					<td><span class="active">2</span></td>
+					<td><span>3</span></td>
+					<td><span>4</span></td>
+					<td><span>5</span></td>
+					<td><span>6</span></td>
+				</tr>
+				<tr>
+					<td><span>7</span></td>
+					<td><span>8</span></td>
+					<td><span class="active">9</span></td>
+					<td><span>10</span></td>
+					<td><span>11</span></td>
+					<td><span>12</span></td>
+					<td><span>13</span></td>
+				</tr>
+				<tr>
+					<td><span class="active">14</span></td>
+					<td><span>15</span></td>
+					<td><span>16</span></td>
+					<td><span>17</span></td>
+					<td><span class="active">18</span></td>
+					<td><span>19</span></td>
+					<td><span>20</span></td>
+				</tr>
+				<tr>
+					<td><span>21</span></td>
+					<td><span>22</span></td>
+					<td><span>23</span></td>
+					<td><span>24</span></td>
+					<td><span>25</span></td>
+					<td><span>27</span></td>
+					<td><span>27</span></td>
+				</tr>
+				<tr>
+					<td><span>28</span></td>
+					<td><span>29</span></td>
+					<td><span>31</span></td>
+					<td><span>1</span></td>
+					<td><span>2</span></td>
+					<td><span>3</span></td>
+					<td><span>4</span></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="schedule">
+			<ul class="tabs">
+			<li class="tab active"><a href="#">Meetings</a></li>
+			<li class="tab"><a href="#">Reminders</a></li>
+			<li class="tab"><a href="#">Notes</a></li>
+			</ul>
+			
+		<div class="tab-pane">
+			<div class="schedule-list">
+				
+				<div class="schedule-item">
+					<div class="time">
+						<span>9</span>
+						<span>am</span>
+					</div>
+					<div class="description">
+						<div class="description-header">Brainstorm on User Stories</div>
+						<div class="description-content">
+							<p>Lorem Ipsum dolor sit amet.</p>
+							<ul class="contact-list">
+								<li class="contact">
+									<a href="#"><img src="http://gravatar.com/avatar/8b1d44e3b2310823bd41d609003b70a9?s=80" alt="" /></a>
+								</li>
+								<li class="contact">
+									<a href="#"><img src="http://gravatar.com/avatar/8b1d44e3b2310823bd41d609003b70a9?s=80" alt="" /></a>
+								</li>
+								<li class="contact add-contact">
+									<a href="#"><i class="icon-plus"></i></a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+	
+				<div class="schedule-item free">
+					<div class="time">
+						<span>10</span>
+						<span>am</span>
+					</div>
+					<div class="description">
+            <div class="description-header">No Schedule</div>
+						<div class="description-content">&nbsp;</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<footer>
+	<p>
+		Dribbble rebound of <a href="http://dribbble.com/shots/1141740-Planner">Planner!</a> by <a href="http://dribbble.com/nashatwork">Avinash Tripathi</a>
+	</p>
+</footer>
+		
+		
+	
+		</div>
+			  </div>
+    </div>
+  </div>
+</div>
+</body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</html>

@@ -1,0 +1,216 @@
+﻿<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+	<meta charset="UTF-8">
+	<title></title>
+	<link rel="stylesheet" href="styles/css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css" />
+	<link rel="stylesheet" href="common.css" />
+</head>
+<body>
+	
+<div class="page">
+<nav class="navbar navbar-default navbar-static-top">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+		  
+		  <a class="navbar-brand glyphicon glyphicon-menu-hamburger" 
+		  href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"
+		  style="font-size: 16px"></a>
+		  <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+          <a class="navbar-brand" href="#">Task Managerment</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <form class="nav navbar-form navbar-left">
+            <input type="text" class="form-control search" placeholder="Search...">
+          </form>
+		  <ul class="nav navbar-nav">
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Tasks <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li> 
+				<li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+				<li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#">Issues</a>
+            </li>
+			<li class="dropdown">
+              <a style="padding: 3px 10px;border: 1px solid;height: 30px;margin-top: 8px;" class="btn btn-md" href="" role="button">Create issue</a>
+            </li>
+          </ul>
+          
+		  
+		  <ul class="nav navbar-nav navbar-right">
+		  <li class="dropdown">
+				  <a style="  padding-top: 10px; height: 44px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+					<img src="useravatar.png" alt="" style="vertical-align: middle;"/> <span>cminhho</span>
+				  </a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+		  <li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-inbox"></i></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+			  <li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bell"></i></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				<!--span class="caret"></span-->
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> </a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+				
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+ 
+  <div class="main"  style="overflow: auto">
+    <div class="nav">
+		<div class="text-center">
+		</div>
+	  
+      <div class="menu">
+        <div class="title">Navigation</div>
+        <ul>
+          <li> <i class="fa fa-home"></i>Home</li>
+          <li><i class="fa fa-signal"></i>Activity</li>
+          <li class="active"> <i class="fa fa-tasks"></i>Manage Tasks</li>
+          <li> <i class="fa fa-envelope"></i>Messages</li>
+        </ul>
+      </div>
+    </div>
+    <div class="view" style="position: relative; overflow: auto; height: 100%;">
+      <div class="viewHeader">
+        <div class="title">Create Tasks</div>
+
+      </div>
+      <div class="content" >
+		<div class="" style="padding: 0; margin: 0">
+
+		 <div class="alert alert-danger fade in" role="alert">
+      <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+      <h4>Oh snap! You got an error!</h4>
+      <p>Change this and that and try again. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit. Cras mattis consectetur purus sit amet fermentum.</p>
+      <p>
+        <button type="button" class="btn btn-danger">Take this action</button>
+        <button type="button" class="btn btn-default">Or do this</button>
+      </p>
+    </div>
+		<form class="form-horizontal" style="">
+		<div class="">
+			<div class="col-md-6">
+
+			<div class="form-group has-success has-feedback">
+				<label class="col-xs-2 control-label" for="inputSuccess">Subject</label>
+				<div class="col-xs-10">
+					<input type="text" id="inputSuccess" class="form-control" placeholder="Input with success" value="Task 1">
+					<span class="glyphicon glyphicon-ok form-control-feedback"></span>
+					<span class="help-block">Subject is available</span>
+				</div>
+			</div>
+			<!-- <div class="form-group has-warning has-feedback">
+				<label class="col-xs-2 control-label" for="inputWarning">Password</label>
+				<div class="col-xs-10">
+					<input type="password" id="inputWarning" class="form-control" placeholder="Input with warning">
+					<span class="glyphicon glyphicon-warning-sign form-control-feedback"></span>
+					<span class="help-block">Password strength: Weak</span>
+				</div>
+			</div> -->
+			<div class="form-group has-error has-feedback">
+				<label class="col-xs-2 control-label" for="inputError">Email</label>
+				<div class="col-xs-10">
+					<input type="email" id="inputError" class="form-control" placeholder="Input with error">
+					<span class="glyphicon glyphicon-remove form-control-feedback"></span>
+					<span class="help-block">Please enter a valid email address</span>
+				</div>
+			</div>
+			<div class="form-group has-success has-feedback">
+				<label class="col-xs-2 control-label" for="inputError">Phone</label>
+				<div class="col-xs-10">
+					<input type="email" id="inputError" class="form-control" placeholder="" value="0906 246 489">
+				</div>
+			</div>
+			<div class="form-group has-success has-feedback">
+				<label class="col-xs-2 control-label" for="inputError">Project</label>
+				<div class="col-xs-10">
+					<select class="form-control">
+						<option selected="selected" value="Select One">Select One</option>
+						<option value="End User" selected>AXS Modeling</option>
+						<option value="Student">AXS Dev One</option>
+						<option value="Teacher">AXS Dev Two</option>
+						<option value="Teacher">AXS QA</option>
+					</select>
+				</div>
+			</div>
+		
+				</div>
+			<div class="col-md-6">
+				<div class="form-group has-success has-feedback">
+					<div class="col-xs-12">
+						<textarea class="form-control" rows="12 placeholder="Contain"></textarea>
+					</div>
+				</div>
+				
+			</div>
+				
+				<div class="col-xs-12 text-right">
+					<button class="btn btn-primary">Create</button>
+					<button class="btn btn-default">Cancle</button>
+				</div>
+			
+			</div>
+		</form>
+		
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+</body>
+	
+</html>

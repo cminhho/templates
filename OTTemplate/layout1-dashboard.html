@@ -1,0 +1,1336 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<link rel="stylesheet" href="http://cdn.datatables.net/1.10.5/css/jquery.dataTables.min.css" />
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+	<link rel="stylesheet" href="styles/css/bootstrap.min.css">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+<style type="text/css">
+
+/* noticebar */
+.noticebar-menu {
+  width: 325px;
+}
+.noticebar-menu .nav-header {
+  padding: 6px 12px;
+  font-size: 13px;
+  font-weight: 600;
+}
+.noticebar-menu > li {
+  display: table;
+  width: 100%;
+  padding: 0;
+  margin-right: 0;
+  margin-left: 0;
+  border-bottom: 1px dotted #ccc;
+}
+.noticebar-menu > li > a {
+  padding: 8px 12px;
+  font-size: 12px;
+  white-space: normal;
+}
+.noticebar-item-image {
+  width: 36px;
+  font-size: 30px;
+  text-align: center;
+}
+.noticebar-item-image, .noticebar-item-body {
+  display: table-cell;
+  vertical-align: middle;
+}
+.noticebar-item-body {
+  padding-left: 10px;
+}
+.noticebar-item-title {
+  display: block;
+  font-weight: 700;
+}
+.noticebar-item-time {
+  display: block;
+  color: #777;
+}
+
+.noticebar-menu > li:last-child {
+  border-bottom: none;
+}
+.noticebar-menu-view-all {
+  text-align: center;
+}
+
+.noticebar-empty {
+  padding: 25px 35px !important;
+  text-align: center;
+}
+.noticebar-empty h4{
+  font-size: 18px;
+}
+.noticebar-empty-title {
+  color: #d74b4b;
+}
+
+.badge {
+  position: absolute;
+  top: 6px;
+  right: 3px;
+}
+
+.badge-primary {
+  background-color: #d74b4b !important;
+}
+
+/* mainnav */
+
+.mainnav {
+  position: relative;
+  margin-bottom: 40px;
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+}
+.mainnav-toggle {
+  display: block;
+  padding: 12px 0;
+  color: #d74b4b;
+  font-size: 18px;
+  text-align: center;
+  cursor: pointer;
+}
+.mainnav-toggle:hover {
+  color: #d13232;
+}
+.mainnav-form {
+  position: relative;
+}
+.mainnav-form-btn {
+  position: absolute;
+  top: 17px;
+  right: 2px;
+  color: #d74b4b;
+  background-color: transparent;
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+}
+.mainnav-form-btn:hover {
+  color: #9a2222;
+}
+.mainnav-menu {
+  padding: 0;
+  margin: 0 -15px;
+  list-style-type: none;
+}
+.mainnav-menu > li {
+  position: relative;
+}
+.mainnav-menu > li > a {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  color: #999;
+  font-weight: 600;
+}
+.mainnav-menu > li > a:hover {
+  text-decoration: none;
+  background-color: #eee;
+}
+.mainnav-menu > li > a,
+.mainnav-menu > li > a:hover,
+.mainnav-menu > li > a:focus {
+  text-decoration: none;
+}
+.mainnav-menu > li.open > a,
+.mainnav-menu > li.open > a:hover,
+.mainnav-menu > li.open > a:focus {
+  color: #555;
+  background-color: #f4f4f4;
+  border-bottom-color: transparent;
+}
+.mainnav-menu .mainnav-caret:before {
+  display: inline-block;
+  position: relative;
+  top: -1px;
+  margin-left: .25em;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  line-height: 1;
+  content: "\f0d7";
+  -webkit-font-smoothing: antialiased;
+}
+.mainnav-menu > li.active > a,
+.mainnav-menu > li.active > a:hover,
+.mainnav-menu > li.active > a:focus {
+  color: #d74b4b;
+  border-bottom-color: #d74b4b;
+}
+.mainnav:after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  z-index: -1;
+  width: 100%;
+  height: 50px;
+  margin-top: 2px;
+  background-image: -webkit-linear-gradient(top, #f2f2f2 0%, #ffffff 100%);
+  background-image: linear-gradient(to bottom, #f2f2f2 0%, #ffffff 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff2f2f2', endColorstr='#ffffffff', GradientType=0);
+}
+.mainnav .dropdown-menu {
+  min-width: 200px;
+}
+@media (min-width: 768px) {
+  .mainnav-toggle {
+    display: none;
+  }
+  .mainnav-collapse {
+    width: auto;
+    padding-right: 0;
+    padding-left: 0;
+    border-top: 0;
+    box-shadow: none;
+  }
+  .mainnav-collapse.collapse {
+    display: block !important;
+    height: auto !important;
+    padding-bottom: 0;
+    overflow: visible !important;
+  }
+  .mainnav-form {
+    margin-top: 20px;
+  }
+  .mainnav-search-query {
+    width: 120px;
+  }
+  .mainnav-form-btn {
+    top: 2px;
+  }
+  .mainnav-menu {
+    margin-left: -15px;
+  }
+  .mainnav-menu > li {
+    float: left;
+    margin-right: 0;
+  }
+  .mainnav-menu > li > a {
+    padding: 21px 15px;
+    font-size: 14px;
+    letter-spacing: -1px;
+    border-bottom: 1px solid transparent;
+  }
+  .mainnav-menu > li > a:hover {
+    background-color: #f3f3f3;
+  }
+  .mainnav-menu > li.active > a {
+    border-bottom-color: #d23636;
+  }
+  .mainnav-menu > li.is-open > a {
+    background-color: transparent;
+  }
+  .mainnav-menu .mainnav-caret {
+    font-size: 13px;
+  }
+  .mainnav-menu > li > .dropdown-menu {
+    top: 97%;
+    border-color: #ccc;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+  .mainnav-menu > li > .dropdown-menu:before,
+  .mainnav-menu > li > .dropdown-menu:after {
+    content: '';
+    display: inline-block;
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    border-bottom: 7px solid #CCC;
+    border-bottom-color: rgba(0, 0, 0, 0.2);
+    position: absolute;
+    top: -7px;
+    left: 9px;
+  }
+  .mainnav-menu > li > .dropdown-menu:after {
+    border-left-width: 6px;
+    border-right-width: 6px;
+    border-bottom-width: 6px;
+    border-bottom-color: #fff;
+    top: -6px;
+    left: 10px;
+  }
+}
+@media (min-width: 992px) {
+  .mainnav-search-query {
+    width: auto;
+  }
+  .mainnav-menu > li {
+    margin-right: 10px;
+  }
+  .mainnav-menu > li > a {
+    font-size: 20px;
+  }
+  .mainnav-menu .mainnav-caret {
+    top: -2px;
+    font-size: 18px;
+  }
+  .lt-ie9 .mainnav-menu > li > a {
+    font-size: 16px;
+  }
+  .lt-ie9 .mainnav-menu .mainnav-caret {
+    font-size: 14px;
+  }
+}
+@media (max-width: 767px) {
+  .mainnav-menu .dropdown-menu {
+    position: static;
+    float: none;
+    width: auto;
+    margin-top: 0;
+    background-color: transparent;
+    border: 0;
+    box-shadow: none;
+  }
+  .mainnav-menu .dropdown-menu > li > a {
+    padding-left: 25px;
+  }
+  .mainnav-menu > li.is-open .dropdown-menu {
+    display: block !important;
+  }
+  .mainnav-form {
+    float: none !important;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+/* container */
+#wrapper {
+  min-height: 100%;
+  height: auto;
+  margin: 0 auto -60px;
+  padding: 0 0 60px;
+}
+
+.btn-jumbo {
+  padding: 13px 20px;
+  font-size: 22px;
+  line-height: 1.33;
+  border-radius: 6px;
+}
+
+.layout-main-left .layout-sidebar {
+  padding-right: 15px;
+  padding-left: 30px;
+  border-left: 1px solid #ccc;
+  -webkit-box-shadow: inset 8px 0px 15px -10px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 8px 0px 15px -10px rgba(0, 0, 0, 0.2);
+}
+
+
+/* footer */
+/* .footer {
+	color: #fff;
+  line-height: 40px;
+  text-align: center;
+  background-color: #194066;
+  background-color: #e5e5e5;
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  position: relative;
+  bottom: 0;
+  left: 0;
+  right: 0;
+} */
+.footer {
+  height: 80px;
+}
+</style>
+    <title>Static Top Navbar Example for Bootstrap</title>
+
+    <!-- Bootstrap core CSS -->
+  
+  <link rel="stylesheet" href="layout.css">
+
+    <!-- Custom styles for this template -->
+	<style type="text/css">
+ 
+	</style>
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Static navbar -->
+    <nav style="display: none" class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+		  
+		 
+          <a class="navbar-brand" href="#">Taskcenter</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dashboards <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li> 
+				<li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+				<li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Issues <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+		  <li class="dropdown">
+				  <a style="  padding-top: 10px; height: 44px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+					<img src="useravatar.png" alt="" style="vertical-align: middle;"/> <span>cminhho</span>
+				  </a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+			  <li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> </a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+					<li><a href="#">One more separated link</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-inbox"></i></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+			  <li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bell"></i></a>
+				  <style type="text/css">
+
+				  </style>
+				  <span class="badge badge-primary">3</span>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+          </ul>
+		  <form class="navbar-form navbar-right">
+            <input type="text" class="form-control search" placeholder="Search...">
+          </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+	
+	
+	<header class="navbar navbar-default navbar-static-top" role="banner">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-cog"></i>
+        </button>
+
+        <a href="" class="navbar-brand navbar-brand-img">
+		<img src="header-logo.png" alt="" style="display: inline; vertical-align: middle; margin-right: 10px;"/><span>5520 AMS - Task Center</span>
+          
+        </a>
+      </div> <!-- /.navbar-header -->
+
+
+      <nav class="collapse navbar-collapse" role="navigation">
+
+        <ul class="nav navbar-nav noticebar navbar-left">
+
+          <li class="dropdown">
+            <a href="page-notifications.html" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell"></i>
+              <span class="navbar-visible-collapsed">&nbsp;Notifications&nbsp;</span>
+              <span class="badge badge-primary">3</span>
+            </a>
+
+            <ul class="dropdown-menu noticebar-menu noticebar-hoverable" role="menu">
+              <li class="nav-header">
+                <div class="pull-left">
+                  Notifications
+                </div>
+
+                <div class="pull-right">
+                  <a href="javascript:;">Mark as Read</a>
+                </div>
+              </li>
+
+              <li>
+                <a href="page-notifications.html" class="noticebar-item">
+                  <span class="noticebar-item-image">
+                    <i class="fa fa-cloud-upload text-success"></i>
+                  </span>
+                  <span class="noticebar-item-body">
+                    <strong class="noticebar-item-title">Templates Synced</strong>
+                    <span class="noticebar-item-text">20 Templates have been synced to the Mashon Demo instance.</span>
+                    <span class="noticebar-item-time"><i class="fa fa-clock-o"></i> 12 minutes ago</span>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="page-notifications.html" class="noticebar-item">
+                  <span class="noticebar-item-image">
+                    <i class="fa fa-ban text-danger"></i>
+                  </span>
+                  <span class="noticebar-item-body">
+                    <strong class="noticebar-item-title">Sync Error</strong>
+                    <span class="noticebar-item-text">5 Designs have been failed to be synced to the Mashon Demo instance.</span>
+                    <span class="noticebar-item-time"><i class="fa fa-clock-o"></i> 20 minutes ago</span>
+                  </span>
+                </a>
+              </li>
+
+              <li class="noticebar-menu-view-all">
+                <a href="page-notifications.html">View All Notifications</a>
+              </li>
+            </ul>
+          </li>
+
+
+
+          <li class="dropdown">
+            <a href="page-notifications.html" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope"></i>
+              <span class="navbar-visible-collapsed">&nbsp;Messages&nbsp;</span>
+            </a>
+
+            <ul class="dropdown-menu noticebar-menu noticebar-hoverable" role="menu">                
+              <li class="nav-header">
+                <div class="pull-left">
+                  Messages
+                </div>
+
+                <div class="pull-right">
+                  <a href="javascript:;">New Message</a>
+                </div>
+              </li>
+
+              <li>
+                <a href="page-notifications.html" class="noticebar-item">
+                  <span class="noticebar-item-image">
+                    <img src="useravatar.png" style="width: 50px" alt="">
+                  </span>
+
+                  <span class="noticebar-item-body">
+                    <strong class="noticebar-item-title">New Message</strong>
+                    <span class="noticebar-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</span>
+                    <span class="noticebar-item-time"><i class="fa fa-clock-o"></i> 20 minutes ago</span>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="page-notifications.html" class="noticebar-item">
+                  <span class="noticebar-item-image">
+                    <img src="useravatar.png" style="width: 50px" alt="">
+                  </span>
+
+                  <span class="noticebar-item-body">
+                    <strong class="noticebar-item-title">New Message</strong>
+                    <span class="noticebar-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</span>
+                    <span class="noticebar-item-time"><i class="fa fa-clock-o"></i> 5 hours ago</span>
+                  </span>
+                </a>
+              </li>
+
+              <li class="noticebar-menu-view-all">
+                <a href="page-notifications.html">View All Messages</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-exclamation-triangle"></i>
+              <span class="navbar-visible-collapsed">&nbsp;Alerts&nbsp;</span>
+            </a>
+
+            <ul class="dropdown-menu noticebar-menu noticebar-hoverable" role="menu">                
+              <li class="nav-header">
+                <div class="pull-left">
+                  Alerts
+                </div>
+              </li>
+
+              <li class="noticebar-empty">                  
+                <h4 class="noticebar-empty-title">No alerts here.</h4>
+                <p class="noticebar-empty-text">Check out what other makers are doing on Explore!</p>                
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+
+
+
+        <ul class="nav navbar-nav navbar-right">    
+
+          <li>
+            <a href="javsacript:;">About</a>
+          </li>    
+
+          <li>
+            <a href="javascript:;">Resources</a>
+          </li>    
+
+		  <li class="dropdown navbar-profile">
+				  <a style="  padding-top: 10px; height: 44px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+					<img src="useravatar.png" alt="" style="vertical-align: middle;">
+					<span class="navbar-profile-label">hmchung@tma.com.vn</span>
+					<i class="fa fa-caret-down"></i>
+				  </a>
+				  <ul class="dropdown-menu" role="menu">
+
+              <li>
+                <a href="page-profile.html">
+                  <i class="fa fa-user"></i> 
+                  &nbsp;&nbsp;My Profile
+                </a>
+              </li>
+
+              <li>
+                <a href="page-pricing.html">
+                  <i class="fa fa-dollar"></i> 
+                  &nbsp;&nbsp;Plans &amp; Billing
+                </a>
+              </li>
+
+              <li>
+                <a href="page-settings.html">
+                  <i class="fa fa-cogs"></i> 
+                  &nbsp;&nbsp;Settings
+                </a>
+              </li>
+
+              <li class="divider"></li>
+
+              <li>
+                <a href="account-login.html">
+                  <i class="fa fa-sign-out"></i> 
+                  &nbsp;&nbsp;Logout
+                </a>
+              </li>
+
+            </ul>
+		</li>
+		  
+
+        </ul>
+
+      </nav>
+
+    </div> <!-- /.container -->
+
+  </header>
+	<!-- /header -->
+	
+	<style type="text/css">
+</style>
+	
+	<div class="mainnav">
+
+    <div class="container">
+
+      <a class="mainnav-toggle" data-toggle="collapse" data-target=".mainnav-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-bars"></i>
+      </a>
+
+      <nav class="collapse mainnav-collapse" role="navigation">
+
+        <form class="mainnav-form pull-right" role="search">
+          <input type="text" class="form-control input-md mainnav-search-query" placeholder="Search">
+          <button class="btn btn-sm mainnav-form-btn"><i class="fa fa-search"></i></button>
+        </form>
+
+        <ul class="mainnav-menu">
+
+          <li class="dropdown active">
+          	<a href="index.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+          	Dashboards
+          	<i class="mainnav-caret"></i>
+          	</a>
+
+          	<ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="index.html">
+                <i class="fa fa-dashboard"></i> 
+                &nbsp;&nbsp;Analytics Dashboard
+                </a>
+              </li>
+
+              <li>
+                <a href="dashboard-2.html">
+                <i class="fa fa-dashboard"></i> 
+                &nbsp;&nbsp;Sidebar Dashboard
+                </a>
+              </li>
+
+              <li>
+                <a href="dashboard-3.html">
+                <i class="fa fa-dashboard"></i> 
+                &nbsp;&nbsp;Reports Dashboard
+                </a>
+              </li>
+          	</ul>
+          </li>
+
+
+          <li class="dropdown is-open">
+
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+            Components
+            <i class="mainnav-caret"></i>					
+            </a>
+
+            <ul class="dropdown-menu" role="menu">
+
+              <li>
+                <a href="components-tabs.html">
+                <i class="fa fa-bars"></i> 
+                &nbsp;&nbsp;Tabs &amp; Accordions
+                </a>
+              </li>
+
+              <li>
+                <a href="components-popups.html">
+                <i class="fa fa-calendar-o"></i> 
+                &nbsp;&nbsp;Popups &amp; Alerts
+                </a>
+              </li>
+
+              <li>
+                <a href="components-validation.html">
+                <i class="fa fa-check"></i> 
+                &nbsp;&nbsp;Validation
+                </a>
+              </li>
+
+              <li>
+                <a href="components-datatables.html">
+                <i class="fa fa-table"></i> 
+                &nbsp;&nbsp;Data Tables
+                </a>
+              </li>
+
+              <li>
+                <a href="components-gallery.html">
+                <i class="fa fa-picture-o"></i> 
+                &nbsp;&nbsp;Gallery
+                </a>
+              </li>
+
+              <li>
+                <a href="components-charts.html">
+                <i class="fa fa-bar-chart-o"></i> 
+                &nbsp;&nbsp;Charts
+                </a>
+              </li>		  
+            </ul>
+          </li>
+
+
+          <li class="dropdown">
+
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+            Sample Pages
+            <i class="mainnav-caret"></i>
+            </a>
+
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="page-pricing.html">
+                <i class="fa fa-money"></i> 
+                &nbsp;&nbsp;Plans &amp; Billing
+                </a>
+              </li>
+
+              <li>
+                <a href="page-profile.html">
+                <i class="fa fa-user"></i> 
+                &nbsp;&nbsp;Profile
+                </a>
+              </li>
+
+              <li>
+                <a href="page-settings.html">
+                <i class="fa fa-cogs"></i> 
+                &nbsp;&nbsp;Settings
+                </a>
+              </li>
+
+              <li>
+                <a href="page-faq.html">
+                <i class="fa fa-question"></i> 
+                &nbsp;&nbsp;FAQ
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="dropdown">
+
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+            Extras
+            <i class="mainnav-caret"></i>
+            </a>
+
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="page-notifications.html">
+                <i class="fa fa-bell"></i> 
+                &nbsp;&nbsp;Notifications
+                </a>
+              </li>			
+
+              <li>
+                <a href="extras-icons.html">
+                <i class="fa fa-smile-o"></i> 
+                &nbsp;&nbsp;Font Icons
+                </a>
+              </li> 
+
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="#">
+                <i class="fa fa-ban"></i> 
+                &nbsp;&nbsp;Error Pages
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="page-404.html">
+                    <i class="fa fa-ban"></i> 
+                    &nbsp;&nbsp;404 Error
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="page-500.html">
+                    <i class="fa fa-ban"></i> 
+                    &nbsp;&nbsp;500 Error
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="dropdown-submenu">
+
+                <a tabindex="-1" href="#">
+                <i class="fa fa-lock"></i> 
+                &nbsp;&nbsp;Login Pages
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="account-login.html">
+                    <i class="fa fa-unlock"></i> 
+                    &nbsp;&nbsp;Login
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="account-login-social.html">
+                    <i class="fa fa-unlock"></i> 
+                    &nbsp;&nbsp;Login Social
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="account-signup.html">
+                    <i class="fa fa-star"></i> 
+                    &nbsp;&nbsp;Signup
+                    </a>
+                    </li>
+
+                  <li>
+                    <a href="account-forgot.html">
+                    <i class="fa fa-envelope"></i> 
+                    &nbsp;&nbsp;Forgot Password
+                    </a>
+                  </li>
+                </ul>
+              </li> 
+
+            </ul>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div> <!-- /.container -->
+
+  </div>
+	
+	
+	<div class="content">
+
+    <div class="container">
+
+      <div class="layout layout-stack-sm layout-main-left">
+    
+        <div class="col-sm-7 col-md-8 layout-main">
+
+          <div class="portlet">
+
+            <h4 class="portlet-title">
+              <u>Product Sales</u>
+            </h4>
+              
+            <div class="portlet-body">
+
+              <div id="area-chart" class="chart-holder-250" style="padding: 0px; position: relative;"><canvas class="base" width="721" height="250"></canvas><canvas class="overlay" width="721" height="250" style="position: absolute; left: 0px; top: 0px;"></canvas><div class="tickLabels" style="font-size:smaller"><div class="xAxis x1Axis" style="color:#545454"><div class="tickLabel" style="position:absolute;text-align:center;left:49px;top:235px;width:90px">Feb</div><div class="tickLabel" style="position:absolute;text-align:center;left:170px;top:235px;width:90px">Apr</div><div class="tickLabel" style="position:absolute;text-align:center;left:295px;top:235px;width:90px">Jun</div><div class="tickLabel" style="position:absolute;text-align:center;left:420px;top:235px;width:90px">Aug</div><div class="tickLabel" style="position:absolute;text-align:center;left:545px;top:235px;width:90px">Oct</div><div class="tickLabel" style="position:absolute;text-align:center;left:671px;top:235px;width:90px">Dec</div></div><div class="yAxis y1Axis" style="color:#545454"><div class="tickLabel" style="position:absolute;text-align:right;top:222px;right:696px;width:25px">0</div><div class="tickLabel" style="position:absolute;text-align:right;top:177px;right:696px;width:25px">500</div><div class="tickLabel" style="position:absolute;text-align:right;top:132px;right:696px;width:25px">1000</div><div class="tickLabel" style="position:absolute;text-align:right;top:87px;right:696px;width:25px">1500</div><div class="tickLabel" style="position:absolute;text-align:right;top:42px;right:696px;width:25px">2000</div><div class="tickLabel" style="position:absolute;text-align:right;top:-3px;right:696px;width:25px">2500</div></div></div><div class="legend"><div style="position: absolute; width: 68px; height: 15px; top: 9px; right: 9px; opacity: 0.85; background-color: rgb(255, 255, 255);"> </div><table style="position:absolute;top:9px;right:9px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(215,75,75);overflow:hidden"></div></div></td><td class="legendLabel">Total sales</td></tr></tbody></table></div></div>
+            </div> <!-- /.portlet-body -->  
+
+          </div> <!-- /.portlet -->
+      
+          <div class="portlet">
+            
+            <div class="portlet-body">              
+
+              <div class="row">
+              
+                <div class="col-md-3 col-xs-6 text-center">  
+                  <div>
+                    <h3><small><i class="fa fa-caret-up text-success"></i></small> &nbsp;$1486</h3>
+                    <small class="text-muted">Total Earnings</small>
+                  </div>     
+                </div> <!-- /.col --> 
+              
+                <div class="col-md-3 col-xs-6 text-center">      
+                  <div>
+                    <h3><small><i class="fa fa-caret-down text-danger "></i></small> &nbsp;$863</h3>
+                    <small class="text-muted">Total Weekly Revenue</small>
+                  </div>   
+                </div> <!-- /.col --> 
+
+                <div class="col-md-3 col-xs-6 text-center">            
+                  <div>
+                    <h3><small><i class="fa fa-minus text-warning"></i></small> &nbsp;$622</h3>
+                    <small class="text-muted">New Sources</small>
+                  </div>
+                </div> <!-- /.col --> 
+
+                <div class="col-md-3 col-xs-6 text-center">        
+                  <div>
+                    <h3><small><i class="fa fa-caret-up text-success"></i></small> &nbsp;$458</h3>
+                    <small class="text-muted">Gross Margin</small>
+                  </div>  
+                </div> <!-- /.col --> 
+
+              </div> <!-- /.row -->
+              <hr>
+              
+            </div> <!-- /.portlet-body -->
+
+          </div> <!-- /.portlet -->
+
+
+          <div class="row">
+
+            <div class="col-md-6">
+
+              <div class="portlet">
+
+                <h4 class="portlet-title">
+                  <u>Product Breakdown</u>
+                </h4>
+
+                <div class="portlet-body">
+
+                  <div id="stacked-vertical-chart" class="chart-holder-200" style="padding: 0px; position: relative;"><canvas class="base" width="345" height="200"></canvas><canvas class="overlay" width="345" height="200" style="position: absolute; left: 0px; top: 0px;"></canvas><div class="tickLabels" style="font-size:smaller"><div class="xAxis x1Axis" style="color:#545454"><div class="tickLabel" style="position:absolute;text-align:center;left:30px;top:185px;width:69px">Jan</div><div class="tickLabel" style="position:absolute;text-align:center;left:151px;top:185px;width:69px">Mar</div><div class="tickLabel" style="position:absolute;text-align:center;left:273px;top:185px;width:69px">May</div></div><div class="yAxis y1Axis" style="color:#545454"><div class="tickLabel" style="position:absolute;text-align:right;top:173px;right:320px;width:25px">0</div><div class="tickLabel" style="position:absolute;text-align:right;top:137px;right:320px;width:25px">250</div><div class="tickLabel" style="position:absolute;text-align:right;top:102px;right:320px;width:25px">500</div><div class="tickLabel" style="position:absolute;text-align:right;top:67px;right:320px;width:25px">750</div><div class="tickLabel" style="position:absolute;text-align:right;top:32px;right:320px;width:25px">1000</div><div class="tickLabel" style="position:absolute;text-align:right;top:-3px;right:320px;width:25px">1250</div></div></div><div class="legend"><div style="position: absolute; width: 63px; height: 45px; top: 9px; right: 9px; opacity: 0.85; background-color: rgb(255, 255, 255);"> </div><table style="position:absolute;top:9px;right:9px;;font-size:smaller;color:#545454"><tbody><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(215,75,75);overflow:hidden"></div></div></td><td class="legendLabel">Product 1</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(71,95,119);overflow:hidden"></div></div></td><td class="legendLabel">Product 2</td></tr><tr><td class="legendColorBox"><div style="border:1px solid #ccc;padding:1px"><div style="width:4px;height:0;border:5px solid rgb(188,188,188);overflow:hidden"></div></div></td><td class="legendLabel">Product 3</td></tr></tbody></table></div></div>
+                </div> <!-- /.portlet-body -->
+
+              </div> <!-- /.portlet -->
+
+            </div> <!-- /.col -->
+
+            <div class="col-md-6">
+
+              <div class="portlet">
+
+                <h4 class="portlet-title">
+                  <u>Section Header</u>
+                </h4>
+
+                <div class="portlet-body">
+
+                  <div class="progress-stat">
+
+                    <div class="progress-stat-label">
+                      % New Visits
+                    </div>
+
+                    <div class="progress-stat-value">
+                      77.7%
+                    </div>
+
+                    <div class="progress progress-striped progress-sm active">
+                      <div class="progress-bar progress-bar-primary" role="progressbar" aria-valuenow="77" aria-valuemin="0" aria-valuemax="100" style="width: 77%">
+                      <span class="sr-only">77.74% Visit Rate</span>
+                      </div>
+                    </div> <!-- /.progress -->
+
+                  </div> <!-- /.progress-stat -->
+
+                  <div class="progress-stat">
+
+                    <div class="progress-stat-label">
+                      % Mobile Visitors
+                    </div>
+
+                    <div class="progress-stat-value">
+                      33.2%
+                    </div>
+
+                    <div class="progress progress-striped progress-sm active">
+                      <div class="progress-bar progress-bar-tertiary" role="progressbar" aria-valuenow="33" aria-valuemin="0" aria-valuemax="100" style="width: 33%">
+                      <span class="sr-only">33% Mobile Visitors</span>
+                      </div>
+                    </div> <!-- /.progress -->
+
+                  </div> <!-- /.progress-stat -->
+
+                  <div class="progress-stat">
+
+                    <div class="progress-stat-label">
+                      Bounce Rate
+                    </div>
+
+                    <div class="progress-stat-value">
+                      42.7%
+                    </div>
+
+                    <div class="progress progress-striped progress-sm active">
+                      <div class="progress-bar progress-bar-secondary" role="progressbar" aria-valuenow="42" aria-valuemin="0" aria-valuemax="100" style="width: 42%">
+                      <span class="sr-only">42.7% Bounce Rate</span>
+                      </div>
+                    </div> <!-- /.progress -->
+
+                  </div> <!-- /.progress-stat -->
+
+                </div>  <!-- /.portlet-body -->
+
+              </div> <!-- /.portlet -->
+
+            </div> <!-- /.col -->
+
+          </div> <!-- /.row -->
+
+
+          <div class="portlet">
+
+            <h4 class="portlet-title">
+              <u>Browser Details</u>
+            </h4>
+
+            <div class="portlet-body">
+
+			  <table id="example" class="table table-striped table-hover" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Project</th>
+                <th>Time</th>
+                <th>Start date</th>
+            </tr>
+        </thead>
+ 
+       <!--  <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot> -->
+ 
+        <tbody>
+            <tr>
+                <td data-search="Tiger Nixon">T. Nixon</td>
+                <td>System Architect</td>
+                <td>61</td>
+                <td data-order="1303686000">Mon 25th Apr 11</td>
+            </tr>
+            <tr>
+                <td data-search="Garrett Winters">G. Winters</td>
+                <td>Accountant</td>
+                <td>63</td>
+                <td data-order="1311548400">Mon 25th Jul 11</td>
+            </tr>
+            <tr>
+                <td data-search="Ashton Cox">A. Cox</td>
+                <td>Junior Technical Author</td>
+                <td>66</td>
+                <td data-order="1231718400">Mon 12th Jan 09</td>
+            </tr>
+            <tr>
+                <td data-search="Timothy Mooney">T. Mooney</td>
+                <td>Office Manager</td>
+                <td>37</td>
+                <td data-order="1228953600">Thu 11th Dec 08</td>
+            </tr>
+            <tr>
+                <td data-search="Jackson Bradshaw">J. Bradshaw</td>
+                <td>Director</td>
+                <td>65</td>
+                <td data-order="1222383600">Fri 26th Sep 08</td>
+            </tr>
+            <tr>
+                <td data-search="Olivia Liang">O. Liang</td>
+                <td>Support Engineer</td>
+                <td>64</td>
+                <td data-order="1296691200">Thu 3rd Feb 11</td>
+            </tr>
+            <tr>
+                <td data-search="Bruno Nash">B. Nash</td>
+                <td>Software Engineer</td>
+                <td>38</td>
+                <td data-order="1304377200">Tue 3rd May 11</td>
+            </tr>
+            <tr>
+                <td data-search="Sakura Yamamoto">S. Yamamoto</td>
+                <td>Support Engineer</td>
+                <td>37</td>
+                <td data-order="1250636400">Wed 19th Aug 09</td>
+            </tr>
+            <tr>
+                <td data-search="Thor Walton">T. Walton</td>
+                <td>Developer</td>
+                <td>61</td>
+                <td data-order="1376175600">Sun 11th Aug 13</td>
+            </tr>
+            <tr>
+                <td data-search="Finn Camacho">F. Camacho</td>
+                <td>Support Engineer</td>
+                <td>47</td>
+                <td data-order="1246921200">Tue 7th Jul 09</td>
+            </tr>
+            <tr>
+                <td data-search="Serge Baldwin">S. Baldwin</td>
+                <td>Data Coordinator</td>
+                <td>64</td>
+                <td data-order="1333926000">Mon 9th Apr 12</td>
+            </tr>
+            <tr>
+                <td data-search="Zenaida Frank">Z. Frank</td>
+                <td>Software Engineer</td>
+                <td>63</td>
+                <td data-order="1262563200">Mon 4th Jan 10</td>
+            </tr>
+        </tbody>
+    </table>
+
+			
+            </div> <!-- /.portlet-body -->
+
+          </div> <!-- /.portlet -->
+
+        </div> <!-- /.layout-main -->
+
+
+
+        <div class="col-sm-5 col-md-4 layout-sidebar">
+
+          <div class="portlet">
+            <a class="btn btn-primary btn-jumbo btn-block ">New Overtime</a>
+            <br>
+          </div> <!-- /.portlet -->
+
+
+          <h4>Recent Activity</h4>
+<ul class="schedule">
+    <li class="past">
+      <label class="date">
+        <span class="weekday">TUE</span>
+        <span class="day">23</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Team Christmas Party!</h3>
+      <p>
+        <span class="duration">8pm to 12am</span>
+        <span class="location">Christian's House</span>
+      </p>
+    </li>
+    <li class="next">
+      <label class="date">
+        <span class="weekday">FRI</span>
+        <span class="day">26</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Ice Time</h3>
+      <p>
+        <span class="duration">6:30 am to 8:15am</span>
+        <span class="location">Millwoods Rec Centre</span>
+      </p>
+    </li>
+    <li>
+      <label class="date">
+        <span class="weekday">SAT</span>
+        <span class="day">27</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Game vs. RTS Tough Guys</h3>
+      <p>
+        <span class="duration">6:30pm to 8:30pm</span>
+        <span class="location">Oliver Arena</span>
+      </p>
+    </li>
+	<li>
+      <label class="date">
+        <span class="weekday">SAT</span>
+        <span class="day">27</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Game vs. RTS Tough Guys</h3>
+      <p>
+        <span class="duration">6:30pm to 8:30pm</span>
+        <span class="location">Oliver Arena</span>
+      </p>
+    </li>
+	<li>
+      <label class="date">
+        <span class="weekday">SAT</span>
+        <span class="day">27</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Game vs. RTS Tough Guys</h3>
+      <p>
+        <span class="duration">6:30pm to 8:30pm</span>
+        <span class="location">Oliver Arena</span>
+      </p>
+    </li>
+	<li>
+      <label class="date">
+        <span class="weekday">SAT</span>
+        <span class="day">27</span>
+      </label>
+      <a href="#">
+        <span class="ion-ios-arrow-forward"></span>
+      </a>
+      <h3>Game vs. RTS Tough Guys</h3>
+      <p>
+        <span class="duration">6:30pm to 8:30pm</span>
+        <span class="location">Oliver Arena</span>
+      </p>
+    </li>
+	
+  </ul>
+     <!-- /.schedule -->
+
+        </div> <!-- /.layout-sidebar -->
+
+      </div> <!-- /.layout -->
+
+    </div> <!-- /.container -->
+
+  </div>
+	
+	
+	<footer class="footer">
+  <div class="container">
+  <div class="row">
+	<div class="col-md-4">
+	<ul class="site-footer-links">
+      <li>© 2015 <span title="0.17508s from github-fe139-cp1-prd.iad.github.net">GitHub</span>, Inc.</li>
+        <li><a href="https://github.com/site/terms" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="https://github.com/site/privacy" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="https://github.com/security" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="https://github.com/contact" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+    </ul>
+	</div>
+	<div class="col-md-4"></div>
+	<div class="col-md-4"></div>
+  </div>
+    <p class="">
+	Copyright © 2015 TMA-Solution | All rights reserved | 5520 AMS R9.4.95.00-SNAPSHOT (02 Apr 2015) | Web Team
+  </div>
+</footer>
+	
+	   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+	<script src="http://cdn.datatables.net/1.10.5/js/jquery.dataTables.min.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+		 $('#example').dataTable({"sPaginationType": "full_numbers"});
+	} );
+	</script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  </body>
+</html>
