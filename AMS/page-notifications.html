@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+	<link rel="stylesheet" href="vendor/dataTables/jquery.dataTables.min.css" />
+	<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" />
+	<!-- Bootstrap core CSS -->
+	<link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="styles/layout.css">
+	<link rel="stylesheet" href="" />
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>5520 AMS Task Center</title>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+    <!-- Static navbar -->
+    <nav style="display: none" class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Taskcenter</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dashboards <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li> 
+				<li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+			<li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Projects <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+				<li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Issues <span class="caret"></span></a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">One more separated link</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+		  <li class="dropdown">
+				  <a style="  padding-top: 10px; height: 44px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+					<img src="assets/images/useravatar.png" alt="" style="vertical-align: middle;"/> <span>cminhho</span>
+				  </a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+			  <li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-cog"></i> </a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li><a href="#">Another action</a></li>
+					<li><a href="#">Something else here</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+					<li><a href="#">One more separated link</a></li>
+				  </ul>
+				</li>
+				<li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-inbox"></i></a>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+			  <li class="dropdown">
+				  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"><i class="fa fa-bell"></i></a>
+				  <style type="text/css">
+
+				  </style>
+				  <span class="badge badge-primary">3</span>
+				  <ul class="dropdown-menu" role="menu">
+					<li><a href="#">Action</a></li>
+					<li class="divider"></li>
+					<li class="dropdown-header">Nav header</li>
+					<li><a href="#">Separated link</a></li>
+				  </ul>
+				</li>
+          </ul>
+		  <form class="navbar-form navbar-right">
+            <input type="text" class="form-control search" placeholder="Search...">
+          </form>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+	
+	
+	<header class="navbar navbar-default navbar-static-top" role="banner">
+
+    <div class="container">
+
+      <div class="navbar-header">
+        <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="sr-only">Toggle navigation</span>
+          <i class="fa fa-cog"></i>
+        </button>
+
+        <a href="./dashboard.html" class="navbar-brand navbar-brand-img">
+		<img src="assets/images/header-logo.png" alt="" style="display: inline; vertical-align: middle; margin-right: 10px;"/><span>5520 AMS - Task Center</span>
+        </a>
+      </div> <!-- /.navbar-header -->
+
+
+      <nav class="collapse navbar-collapse" role="navigation">
+
+        <ul class="nav navbar-nav noticebar navbar-left">
+
+          <li class="dropdown">
+            <a href="page-notifications.html" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-bell"></i>
+              <span class="navbar-visible-collapsed">&nbsp;Notifications&nbsp;</span>
+              <span class="badge badge-primary">3</span>
+            </a>
+
+            <ul class="dropdown-menu noticebar-menu noticebar-hoverable" role="menu">
+              <li class="nav-header">
+                <div class="pull-left">
+                  Notifications
+                </div>
+
+                <div class="pull-right">
+                  <a href="javascript:;">Mark as Read</a>
+                </div>
+              </li>
+
+              <li>
+                <a href="page-notifications.html" class="noticebar-item">
+                  <span class="noticebar-item-image">
+                    <i class="fa fa-cloud-upload text-success"></i>
+                  </span>
+                  <span class="noticebar-item-body">
+                    <strong class="noticebar-item-title">Templates Synced</strong>
+                    <span class="noticebar-item-text">20 Templates have been synced to the Mashon Demo instance.</span>
+                    <span class="noticebar-item-time"><i class="fa fa-clock-o"></i> 12 minutes ago</span>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="page-notifications.html" class="noticebar-item">
+                  <span class="noticebar-item-image">
+                    <i class="fa fa-ban text-danger"></i>
+                  </span>
+                  <span class="noticebar-item-body">
+                    <strong class="noticebar-item-title">Sync Error</strong>
+                    <span class="noticebar-item-text">5 Designs have been failed to be synced to the Mashon Demo instance.</span>
+                    <span class="noticebar-item-time"><i class="fa fa-clock-o"></i> 20 minutes ago</span>
+                  </span>
+                </a>
+              </li>
+
+              <li class="noticebar-menu-view-all">
+                <a href="page-notifications.html">View All Notifications</a>
+              </li>
+            </ul>
+          </li>
+
+
+
+          <li class="dropdown">
+            <a href="page-notifications.html" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-envelope"></i>
+              <span class="navbar-visible-collapsed">Messages</span>
+			  <span class="badge badge-primary">2</span>
+            </a>
+
+            <ul class="dropdown-menu noticebar-menu noticebar-hoverable" role="menu">                
+              <li class="nav-header">
+                <div class="pull-left">
+                  Messages
+                </div>
+
+                <div class="pull-right">
+                  <a href="javascript:;">New Message</a>
+                </div>
+              </li>
+
+              <li>
+                <a href="page-notifications.html" class="noticebar-item">
+                  <span class="noticebar-item-image">
+                    <img src="assets/images/useravatar.png" style="width: 50px" alt="">
+                  </span>
+
+                  <span class="noticebar-item-body">
+                    <strong class="noticebar-item-title">New Message</strong>
+                    <span class="noticebar-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</span>
+                    <span class="noticebar-item-time"><i class="fa fa-clock-o"></i> 20 minutes ago</span>
+                  </span>
+                </a>
+              </li>
+
+              <li>
+                <a href="page-notifications.html" class="noticebar-item">
+                  <span class="noticebar-item-image">
+                    <img src="assets/images/useravatar.png" style="width: 50px" alt="">
+                  </span>
+
+                  <span class="noticebar-item-body">
+                    <strong class="noticebar-item-title">New Message</strong>
+                    <span class="noticebar-item-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit...</span>
+                    <span class="noticebar-item-time"><i class="fa fa-clock-o"></i> 5 hours ago</span>
+                  </span>
+                </a>
+              </li>
+
+              <li class="noticebar-menu-view-all">
+                <a href="page-notifications.html">View All Messages</a>
+              </li>
+            </ul>
+          </li>
+
+          <li class="dropdown">
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown">
+              <i class="fa fa-exclamation-triangle"></i>
+              <span class="navbar-visible-collapsed">&nbsp;Alerts&nbsp;</span>
+            </a>
+
+            <ul class="dropdown-menu noticebar-menu noticebar-hoverable" role="menu">                
+              <li class="nav-header">
+                <div class="pull-left">
+                  Alerts
+                </div>
+              </li>
+
+              <li class="noticebar-empty">                  
+                <h4 class="noticebar-empty-title">No alerts here.</h4>
+                <p class="noticebar-empty-text">Check out what other makers are doing on Explore!</p>                
+              </li>
+            </ul>
+          </li>
+
+        </ul>
+
+
+
+        <ul class="nav navbar-nav navbar-right">    
+
+          <li>
+            <a href="javsacript:;">About</a>
+          </li>    
+
+          <li>
+            <a href="javascript:;">Resources</a>
+          </li>    
+
+		  <li class="dropdown navbar-profile">
+				  <a style="  padding-top: 10px; height: 44px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+					<img src="assets/images/useravatar.png" alt="" style="vertical-align: middle;">
+					<span class="navbar-profile-label">hmchung@tma.com.vn</span>
+					<i class="fa fa-caret-down"></i>
+				  </a>
+				  <ul class="dropdown-menu" role="menu">
+
+              <li>
+                <a href="page-profile.html">
+                  <i class="fa fa-user"></i> 
+                  &nbsp;&nbsp;My Profile
+                </a>
+              </li>
+
+              <li>
+                <a href="page-pricing.html">
+                  <i class="fa fa-dollar"></i> 
+                  &nbsp;&nbsp;Plans &amp; Billing
+                </a>
+              </li>
+
+              <li>
+                <a href="page-settings.html">
+                  <i class="fa fa-cogs"></i> 
+                  &nbsp;&nbsp;Settings
+                </a>
+              </li>
+
+              <li class="divider"></li>
+
+              <li>
+                <a href="account-login.html">
+                  <i class="fa fa-sign-out"></i> 
+                  &nbsp;&nbsp;Logout
+                </a>
+              </li>
+
+            </ul>
+		</li>
+		  
+
+        </ul>
+
+      </nav>
+
+    </div> <!-- /.container -->
+
+  </header>
+	<!-- /header -->
+	
+	
+	<div class="mainnav">
+
+    <div class="container">
+
+      <a class="mainnav-toggle" data-toggle="collapse" data-target=".mainnav-collapse">
+        <span class="sr-only">Toggle navigation</span>
+        <i class="fa fa-bars"></i>
+      </a>
+
+      <nav class="collapse mainnav-collapse" role="navigation">
+
+        <form class="mainnav-form pull-right" role="search">
+          <input type="text" class="form-control input-md mainnav-search-query" placeholder="Search">
+          <button class="btn btn-sm mainnav-form-btn"><i class="fa fa-search"></i></button>
+        </form>
+
+        <ul class="mainnav-menu">
+
+          <li class="dropdown active">
+          	<a href="index.html" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+          	Dashboards
+          	<i class="mainnav-caret"></i>
+          	</a>
+
+          	<ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="index.html">
+                <i class="fa fa-dashboard"></i> 
+                &nbsp;&nbsp;Analytics Dashboard
+                </a>
+              </li>
+
+              <li>
+                <a href="dashboard-2.html">
+                <i class="fa fa-dashboard"></i> 
+                &nbsp;&nbsp;Sidebar Dashboard
+                </a>
+              </li>
+
+              <li>
+                <a href="dashboard-3.html">
+                <i class="fa fa-dashboard"></i> 
+                &nbsp;&nbsp;Reports Dashboard
+                </a>
+              </li>
+          	</ul>
+          </li>
+
+
+          <li class="dropdown is-open">
+
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+            Components
+            <i class="mainnav-caret"></i>					
+            </a>
+
+            <ul class="dropdown-menu" role="menu">
+
+              <li>
+                <a href="components-tabs.html">
+                <i class="fa fa-bars"></i> 
+                &nbsp;&nbsp;Tabs &amp; Accordions
+                </a>
+              </li>
+
+              <li>
+                <a href="components-popups.html">
+                <i class="fa fa-calendar-o"></i> 
+                &nbsp;&nbsp;Popups &amp; Alerts
+                </a>
+              </li>
+
+              <li>
+                <a href="components-validation.html">
+                <i class="fa fa-check"></i> 
+                &nbsp;&nbsp;Validation
+                </a>
+              </li>
+
+              <li>
+                <a href="components-datatables.html">
+                <i class="fa fa-table"></i> 
+                &nbsp;&nbsp;Data Tables
+                </a>
+              </li>
+
+              <li>
+                <a href="components-gallery.html">
+                <i class="fa fa-picture-o"></i> 
+                &nbsp;&nbsp;Gallery
+                </a>
+              </li>
+
+              <li>
+                <a href="components-charts.html">
+                <i class="fa fa-bar-chart-o"></i> 
+                &nbsp;&nbsp;Charts
+                </a>
+              </li>		  
+            </ul>
+          </li>
+
+
+          <li class="dropdown">
+
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+            Sample Pages
+            <i class="mainnav-caret"></i>
+            </a>
+
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="page-pricing.html">
+                <i class="fa fa-money"></i> 
+                &nbsp;&nbsp;Plans &amp; Billing
+                </a>
+              </li>
+
+              <li>
+                <a href="page-profile.html">
+                <i class="fa fa-user"></i> 
+                &nbsp;&nbsp;Profile
+                </a>
+              </li>
+
+              <li>
+                <a href="page-settings.html">
+                <i class="fa fa-cogs"></i> 
+                &nbsp;&nbsp;Settings
+                </a>
+              </li>
+
+              <li>
+                <a href="page-faq.html">
+                <i class="fa fa-question"></i> 
+                &nbsp;&nbsp;FAQ
+                </a>
+              </li>
+            </ul>
+          </li>
+
+
+          <li class="dropdown">
+
+            <a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown" data-hover="dropdown">
+            Extras
+            <i class="mainnav-caret"></i>
+            </a>
+
+            <ul class="dropdown-menu" role="menu">
+              <li>
+                <a href="page-notifications.html">
+                <i class="fa fa-bell"></i> 
+                &nbsp;&nbsp;Notifications
+                </a>
+              </li>			
+
+              <li>
+                <a href="extras-icons.html">
+                <i class="fa fa-smile-o"></i> 
+                &nbsp;&nbsp;Font Icons
+                </a>
+              </li> 
+
+              <li class="dropdown-submenu">
+                <a tabindex="-1" href="#">
+                <i class="fa fa-ban"></i> 
+                &nbsp;&nbsp;Error Pages
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="page-404.html">
+                    <i class="fa fa-ban"></i> 
+                    &nbsp;&nbsp;404 Error
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="page-500.html">
+                    <i class="fa fa-ban"></i> 
+                    &nbsp;&nbsp;500 Error
+                    </a>
+                  </li>
+                </ul>
+              </li>
+
+              <li class="dropdown-submenu">
+
+                <a tabindex="-1" href="#">
+                <i class="fa fa-lock"></i> 
+                &nbsp;&nbsp;Login Pages
+                </a>
+
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="account-login.html">
+                    <i class="fa fa-unlock"></i> 
+                    &nbsp;&nbsp;Login
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="account-login-social.html">
+                    <i class="fa fa-unlock"></i> 
+                    &nbsp;&nbsp;Login Social
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="account-signup.html">
+                    <i class="fa fa-star"></i> 
+                    &nbsp;&nbsp;Signup
+                    </a>
+                    </li>
+
+                  <li>
+                    <a href="account-forgot.html">
+                    <i class="fa fa-envelope"></i> 
+                    &nbsp;&nbsp;Forgot Password
+                    </a>
+                  </li>
+                </ul>
+              </li> 
+
+            </ul>
+
+          </li>
+
+        </ul>
+
+      </nav>
+
+    </div> <!-- /.container -->
+
+  </div>
+	
+	
+	<style type="text/css">
+
+	</style>
+	
+ <div class="content">
+
+    <div class="container">
+
+	<div class="row">
+
+        <div class="col-md-8">
+
+          <h2 class="title">Your Notifications</h2>
+
+          <br><br>
+
+          <h4 class="content-title"><u>Sent Today</u></h4>
+
+          <ul class="icons-list notifications-list">
+            <li>
+              <i class="icon-li fa fa-ban text-danger"></i>
+              <a href="javascript:;">Dat Tan Le</a> sensed a <a href="javascript:;">request</a> to you
+            </li>
+
+            <li>
+              <i class="icon-li fa fa-check-circle text-success"></i>
+              <a href="javascript:;">You</a> approved a <a href="javascript:;">requestion</a> from <a href="javascript:;">Duy Nguyen Huynh</a>
+            </li>
+          </ul>
+
+          <br>
+
+          <h4 class="content-title"><u>Sent Yesterday</u></h4>
+
+          <ul class="icons-list notifications-list">
+            <li>
+              <i class="icon-li fa fa-eye text-secondary"></i>
+              <a href="javascript:;">You</a> watched the project <a href="javascript:;">AMS Ready Development</a>
+            </li>
+          </ul>
+
+        </div> <!-- /.col -->
+
+      </div>
+	
+    </div> <!-- /.container -->
+
+  </div> <!-- .content -->
+
+</div> <!-- /#wrapper -->
+
+	
+	
+	<footer class="footer">
+	<hr />
+  <div class="container">
+  
+  <div class="row">
+	<div class="col-md-4">
+	<ul class="site-footer-links">
+	<style type="text/css">
+	.site-footer-links li {
+  display: inline-block;
+  line-height: 16px;
+  font-size: 12px;
+}
+	</style>
+      <li>© 2015 <span title="">TMA Solution</span>, Inc.</li>
+        <li><a href="" data-ga-click="Footer, go to terms, text:terms">Terms</a></li>
+        <li><a href="" data-ga-click="Footer, go to privacy, text:privacy">Privacy</a></li>
+        <li><a href="" data-ga-click="Footer, go to security, text:security">Security</a></li>
+        <li><a href="" data-ga-click="Footer, go to contact, text:contact">Contact</a></li>
+    </ul>
+	</div>
+	<div class="col-md-4">
+	
+	</div>
+	<div class="col-md-4">
+	<ul class="site-footer-links right">
+        <li><a href="https://status.github.com/" data-ga-click="Footer, go to status, text:status">Status</a></li>
+      <li><a href="https://developer.github.com" data-ga-click="Footer, go to api, text:api">API</a></li>
+      <li><a href="https://training.github.com" data-ga-click="Footer, go to training, text:training">Training</a></li>
+      <li><a href="https://shop.github.com" data-ga-click="Footer, go to shop, text:shop">Shop</a></li>
+        <li><a href="https://github.com/blog" data-ga-click="Footer, go to blog, text:blog">Blog</a></li>
+        <li><a href="https://github.com/about" data-ga-click="Footer, go to about, text:about">About</a></li>
+
+    </ul>
+	</div>
+  </div>
+    
+</footer>
+	<!--[if lte IE 8]>
+    <script language="javascript" type="text/javascript" src="/js/flot/excanvas.min.js"></script>
+	<![endif]-->
+	   <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<script src="vendor/dataTables/jquery.dataTables.min.js"></script>
+
+<script type="text/javascript" src="http://www.jqueryflottutorial.com/js/flot/jquery.flot.js"></script>
+<script type="text/javascript" src="http://www.jqueryflottutorial.com/js/flot/jquery.flot.time.js"></script>
+<script type="text/javascript" src="http://www.jqueryflottutorial.com/js/flot/jquery.flot.axislabels.js"></script>
+
+<script type="text/javascript" src="scripts/bar.js"></script>
+<script type="text/javascript" src="scripts/mvp.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+  </body>
+</html>
