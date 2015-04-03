@@ -1,0 +1,132 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Bootstrap core CSS -->
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles/layout.css">
+    <meta name="description" content="Overtime Tracking Tool">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>Overtime Tracking Tool</title>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <header id="ott-header"></header>
+    <!-- /header -->
+    <section id="oot-mainnav"></section>
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="inner contact">
+                    <div class="col-md-12">
+                        <h2 class="title">Add User</h2>
+                        <!-- Form Area -->
+                        <div class="">
+                            <!-- Form -->
+                            <form id="contact-us" method="post" action="#">
+                                <!-- Left Inputs -->
+                                <div class="col-xs-6 wow animated slideInLeft">
+                                    <h4 class="content-title"><u>User Infomation</u></h4>
+                                    <!-- Name -->
+                                    <input type="text" name="username" id="username" required="required" class="form-submit form-control" placeholder="Username" autofocus/>
+                                    <!-- Email -->
+                                    <input type="email" name="mail" id="mail" required="required" class="form-submit form-control" placeholder="Email" />
+                                    <!-- Password -->
+                                    <input type="password" name="subject" id="subject" required="required" class="form-submit form-control" placeholder="Password" />
+                                    <input type="password" name="subject" id="subject" required="required" class="form-submit form-control" placeholder="Confirmation" /> </div>
+                                <!-- End Left Inputs -->
+                                <!-- Right Inputs -->
+                                <div class="col-xs-6 wow animated slideInRight">
+                                    <!-- Project -->
+                                    <h4 class="content-title"><u>Project</u></h4>
+                                    <select class="form-submit form-control selectpicker" multiple>
+                                        <optgroup label="AXS Modeling">
+                                            <option>Plugs</option>
+                                            <option>Automation</option>
+                                            <option>iNES</option>
+                                            <option selected>WebUI/Tools</option>
+                                            <option>Code Around</option>
+                                        </optgroup>
+                                        <optgroup label="AXS Dev One">
+                                            <option>APC Core</option>
+                                            <option>Swmgmt/Backrest/LRM</option>
+                                            <option>HA</option>
+                                        </optgroup>
+                                        <optgroup label="AXS Dev Two">
+                                            <option>IDM, SDC, SMA</option>
+                                            <option>Security, SIP, Licensing, PM</option>
+                                            <option>APC Plugs</option>
+                                            <option>NBI, DC Script, OAD, JBoss</option>
+                                            <option>Acting GUI leader</option>
+                                            <option>APC Legacy Plugs</option>
+                                        </optgroup>
+                                        <optgroup label="AXS QA">
+                                            <option>Plug</option>
+                                            <option>APC Core</option>
+                                            <option>APC Plug</option>
+                                            <option>Others</option>
+                                            <option>Apps team test lead</option>
+                                            <option>iTL1/NP/Template test owner</option>
+                                            <option>SDC test owner</option>
+                                        </optgroup>
+                                    </select>
+                                    <!-- Roles -->
+                                    <h4 class="content-title"><u>Roles</u></h4>
+                                    <select class="form-submit form-control">
+                                        <optgroup label="AXS Modeling">
+                                            <option>Administrator</option>
+                                            <option selected>User</option>
+                                        </optgroup>
+                                    </select>
+                                    <!-- End Right Inputs -->
+                                </div>
+                                <!-- Bottom Submit -->
+                                <div class="relative fullwidth col-xs-12" style=" text-align: center;">
+                                    <!-- Send Button -->
+                                    <button type="submit" id="submit" name="submit" class="btn btn-primary btn-submit semibold">Create Account</button>
+                                    <button type="submit" id="submit" name="submit" class="btn btn-cancle semibold">Cancel</button>
+                                </div>
+                                <!-- End Bottom Submit -->
+                                <!-- Clear -->
+                                <div class="clear"></div>
+                            </form>
+                        </div>
+                        <!-- End Contact Form Area -->
+                    </div>
+                </div>
+                <!-- End Inner -->
+            </div>
+        </div>
+        <!-- /.container -->
+    </div>
+    <!-- .content -->
+    </div>
+    <!-- /#wrapper -->
+    <footer id="ott-footer"></footer>
+    <!--[if lte IE 8]>
+    <script language="javascript" type="text/javascript" src="/js/flot/excanvas.min.js"></script>
+	<![endif]-->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <script type="text/javascript">
+		$('select').selectpicker();
+    </script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+</body>
+
+</html>
