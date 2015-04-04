@@ -7,6 +7,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="styles/layout.css">
+	<!-- summernote CSS -->
+	<link href="vendor/summernote/summernote.css" rel="stylesheet">
     <meta name="description" content="Overtime Tracking Tool">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
@@ -18,6 +20,11 @@
     <![endif]-->
 </head>
 <body>
+<style type="text/css">
+.note-editor {
+  border: 1px solid #e4e5e7;
+}
+</style>
     <header id="ott-header"></header>
     <!-- /header -->
     <section id="oot-mainnav"></section>
@@ -45,12 +52,27 @@
                             <input type="text" name="subject" id="subject" required="required" class="form-submit form-control" placeholder="Project" />
                         </div><!-- End Left Inputs -->
                         <!-- Right Inputs -->
-						<h4 class="content-title"><u>Contain</u></h4>
+						
                         <div class="col-xs-6 wow animated slideInRight">
+						<h4 class="content-title"><u>Contain</u></h4>
                             <!-- Message -->
                             <textarea name="message" id="message" class="form-submit form-control textarea"  placeholder="Message"></textarea>
                         </div><!-- End Right Inputs -->
-                        <!-- Bottom Submit -->
+                        
+						
+						<div class="relative fullwidth col-xs-12">
+						<h4 class="content-title"><u>Contain</u></h4>
+							<div class="summernote">
+<h4>Hello PM!</h4>
+<p>dummy text of the printing and typesetting industry. Lorem Ipsum has been the dustrys standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more
+</p>
+<p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with a handful of model sentence structures, to generate Lorem Ipsum which looks reasonable.recently with.
+</p>
+<p>Chung Ho</p>
+</div><br />
+                        </div>
+						
+						<!-- Bottom Submit -->
                         <div class="relative fullwidth col-xs-12">
 							<!-- Bottom Submit -->
                                 <div class="relative fullwidth col-xs-12" style=" text-align: center;">
@@ -98,6 +120,13 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+	<!-- include summernote css/js-->
+	<script src="vendor/summernote/summernote.min.js"></script>
     <script src="scripts/main.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function() {
+	  $('.summernote').summernote();
+	});
+	</script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 </body>
