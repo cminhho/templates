@@ -1,23 +1,18 @@
-CSS:
-Bootstrap http://getbootstrap.com/
-is the most popular HTML, CSS, and JS framework for developing responsive, mobile first projects on the web.
+Credit:
+Google Font: http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700
 
-Font Awesome http://fortawesome.github.io/Font-Awesome/
-The iconic font and CSS toolkit
------------------------------------------------------------------------
-JS:
+Twitter Bootstrap: http://getbootstrap.com/
 
-jQuery Multiple Select Plugin For Bootstrap - Bootstrap Multiselect
-http://www.jqueryscript.net/other/Responsive-jQuery-Message-Box-Notification-Plugin-lobibox.html
+Font Awesome: http://fortawesome.github.io/Font-Awesome/
 
-DataTables Table plug-in for jQuery (https://www.datatables.net/)
-DataTables is a plug-in for the jQuery Javascript library.
+Summernote: http://summernote.org
 
-Summernote: Super Simple WYSIWYG Editor on Bootstrap
-http://summernote.org/#/features#installation
+sweetalert: http://lipis.github.io/bootstrap-sweetalert/
 
-jQuery https://jquery.com/
-jQuery is a fast, small, and feature-rich JavaScript library
+FullCalendar: http://fullcalendar.io/
 
+jQuery: https://jquery.com/
 
-http://codepen.io/macreart/pen/KGJkz
+DataTables Table plug-in for jQuery: https://www.datatables.net/
+
+Bootstrap Multiselect: http://www.jqueryscript.net/other/Responsive-jQuery-Message-Box-Notification-Plugin-lobibox.html

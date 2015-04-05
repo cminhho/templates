@@ -9,6 +9,9 @@
     <link rel="stylesheet" href="styles/layout.css">
 	<!-- summernote CSS -->
 	<link href="vendor/summernote/summernote.css" rel="stylesheet">
+	<!-- sweet-alert CSS -->
+	<link rel="stylesheet" href="vendor/sweetalert/sweet-alert.css">
+		
     <meta name="description" content="Overtime Tracking Tool">
     <meta name="author" content="">
     <link rel="icon" href="favicon.ico">
@@ -40,20 +43,20 @@
                 <!-- Form Area -->
                 <div class="contact-form">
                     <!-- Form -->
-                    <form id="contact-us" method="post" action="#">
+                    <form id="overtime-form" method="" action="" name="overtime-form">
                         <!-- Left Inputs -->
-                        <div class="col-xs-6 wow animated slideInLeft">
+                        <div class="col-md-6 wow animated slideInLeft">
 						<h4 class="content-title"><u>Infomation</u></h4>
                             <!-- Name -->
                             <input type="text" name="name" id="name" required="required" class="form-submit form-control" placeholder="Subject" autofocus/>
                             <!-- Email -->
-                            <input type="date" name="mail" id="mail" required="required" class="form-submit form-control" placeholder="Time" />
+                            <input type="date" name="time" id="time" required="required" class="form-submit form-control" placeholder="Time" />
                             <!-- Subject -->
-                            <input type="text" name="subject" id="subject" required="required" class="form-submit form-control" placeholder="Project" />
+                            <input type="text" name="project" id="project" required="required" class="form-submit form-control" placeholder="Project" />
                         </div><!-- End Left Inputs -->
                         <!-- Right Inputs -->
 						
-                        <div class="col-xs-6 wow animated slideInRight">
+                        <div class="col-md-6 wow animated slideInRight">
 						<h4 class="content-title"><u>Contain</u></h4>
                             <!-- Message -->
                             <textarea name="message" id="message" class="form-submit form-control textarea"  placeholder="Message"></textarea>
@@ -77,8 +80,8 @@
 							<!-- Bottom Submit -->
                                 <div class="relative fullwidth col-xs-12" style=" text-align: center;">
                                     <!-- Send Button -->
-                                    <button type="submit" id="submit" name="submit" class="btn btn-primary btn-submit semibold">Create Overtime</button>
-                                    <button type="submit" id="submit" name="submit" class="btn btn-cancle semibold">Cancel</button>
+                                    <button type="button" id="submit" name="submit" class="btn btn-primary btn-submit semibold">Create Overtime</button>
+                                    <button type="button" id="submit" name="submit" class="btn btn-cancel semibold">Cancel</button>
                                 </div>
                         </div><!-- End Bottom Submit -->
                         <!-- Clear -->
@@ -120,13 +123,42 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="vendor/jquery/jquery.min.js"></script>
     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-	<!-- include summernote css/js-->
+	<!-- include summernote JS-->
 	<script src="vendor/summernote/summernote.min.js"></script>
     <script src="scripts/main.js"></script>
 	<script type="text/javascript">
 	$(document).ready(function() {
 	  $('.summernote').summernote();
 	});
+	</script>
+		
+	<!-- include sweet-alert JS-->
+	<script src="vendor/sweetalert/sweet-alert.min.js"></script>
+	<script type="text/javascript">
+	
+	document.querySelector('form#overtime-form button.btn-submit').onclick = function(){
+		var fname = document.forms['overtime-form']['name'].value;
+		var ftime = document.forms['overtime-form']['time'].value;
+		var fproject = document.forms['overtime-form']['project'].value;
+		var x = document.forms['overtime-form']['name'].value;
+		if((fname !== null && fname !== "") && (ftime !== null && ftime !== "") && (fproject !== null && fproject !== "")){
+			swal("Good job!", "You clicked the button!", "success");
+		}
+	};
+	document.querySelector('form#overtime-form button.btn-cancel').onclick = function(e){
+		
+		 sweetAlert({
+			  title: "Are you sure?",
+			  text: "You will not be able to recover this imaginary file!",
+			  type: "warning",
+			  showCancelButton: true,
+			  confirmButtonColor: "#DD6B55",
+			  confirmButtonText: "Yes",
+			  closeOnConfirm: true,
+			  html: false
+			}, function(){
+			});
+	}
 	</script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 </body>

@@ -8,6 +8,8 @@
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
     <!-- Bootstrap core CSS -->
     <link href="http://cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" rel="stylesheet" />
+	<!-- sweet-alert CSS -->
+	<link rel="stylesheet" href="vendor/sweetalert/sweet-alert.css">
     <link rel="stylesheet" href="styles/layout.css">
     <meta name="description" content="Overtime Tracking Tool">
     <meta name="author" content="">
@@ -33,20 +35,20 @@
                         <!-- Form Area -->
                         <div class="">
                             <!-- Form -->
-                            <form id="contact-us" method="post" action="#">
+                            <form id="user-form" method="" action=""" name="user-form">
                                 <!-- Left Inputs -->
-                                <div class="col-xs-6 wow animated slideInLeft">
+                                <div class="col-md-6 wow animated slideInLeft">
                                     <h4 class="content-title"><u>User Infomation</u></h4>
                                     <!-- Name -->
                                     <input type="text" name="username" id="username" required="required" class="form-submit form-control" placeholder="Username" autofocus/>
                                     <!-- Email -->
                                     <input type="email" name="mail" id="mail" required="required" class="form-submit form-control" placeholder="Email" />
                                     <!-- Password -->
-                                    <input type="password" name="subject" id="subject" required="required" class="form-submit form-control" placeholder="Password" />
-                                    <input type="password" name="subject" id="subject" required="required" class="form-submit form-control" placeholder="Confirmation" /> </div>
+                                    <input type="password" name="password" id="password" required="required" class="form-submit form-control" placeholder="Password" />
+                                    <input type="password" name="confirmation" id="confirmation" required="required" class="form-submit form-control" placeholder="Confirmation" /> </div>
                                 <!-- End Left Inputs -->
                                 <!-- Right Inputs -->
-                                <div class="col-xs-6 wow animated slideInRight">
+                                <div class="col-md-6 wow animated slideInRight">
                                     <!-- Project -->
                                     <h4 class="content-title"><u>Project</u></h4>
                                     <select class="form-submit form-control selectpicker" multiple>
@@ -92,9 +94,10 @@
                                 </div>
                                 <!-- Bottom Submit -->
                                 <div class="relative fullwidth col-xs-12" style=" text-align: center;">
+								<br />
                                     <!-- Send Button -->
-                                    <button type="submit" id="submit" name="submit" class="btn btn-primary btn-submit semibold">Create Account</button>
-                                    <button type="submit" id="submit" name="submit" class="btn btn-cancle semibold">Cancel</button>
+                                    <button type="button" id="submit" name="submit" class="btn btn-primary btn-submit semibold">Create Account</button>
+                                    <button type="button" id="submit" name="submit" class="btn btn-cancel semibold">Cancel</button>
                                 </div>
                                 <!-- End Bottom Submit -->
                                 <!-- Clear -->
@@ -126,6 +129,34 @@
     <script type="text/javascript">
 		$('select').selectpicker();
     </script>
+	
+	<!-- include sweet-alert JS-->
+	<script src="vendor/sweetalert/sweet-alert.min.js"></script>
+	<script type="text/javascript">
+	document.querySelector('form#user-form button.btn-submit').onclick = function(){
+		var fname = document.forms['user-form']['username'].value;
+		var fmail = document.forms['user-form']['mail'].value;
+		var fpassword = document.forms['user-form']['password'].value;
+		var fconfirmation = document.forms['user-form']['confirmation'].value;
+		var x = document.forms['user-form']['name'].value;
+		if((fname !== null && fname !== "") && (fmail !== null && fmail !== "") && (fpassword !== null && fpassword !== "") && (fconfirmation !== null && fconfirmation !== "")){
+			swal("Good job!", "You clicked the button!", "success");
+		}
+	};
+	document.querySelector('form#user-form button.btn-cancel').onclick = function(e){
+		 sweetAlert({
+			  title: "Are you sure?",
+			  text: "You will not be able to recover this imaginary file!",
+			  type: "warning",
+			  showCancelButton: true,
+			  confirmButtonColor: "#DD6B55",
+			  confirmButtonText: "Yes",
+			  closeOnConfirm: true,
+			  html: false
+			}, function(){
+			});
+	}
+	</script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
 </body>
 

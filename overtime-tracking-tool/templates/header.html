@@ -1,7 +1,7 @@
 ﻿<header class="navbar navbar-default navbar-static-top" role="banner">
     <div class="container">
         <div class="navbar-header">
-            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <i class="fa fa-cog"></i> </button>
+            <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only">Toggle navigation</span> <i class="fa fa-cog mobileIcon"></i> </button>
             <a href="./index.html" class="navbar-brand navbar-brand-img"> <img src="assets/images/header-logo.png" alt="" style="display: inline; vertical-align: middle; margin-right: 10px;" /><span>Overtime Tracking Tool</span> </a>
         </div>
         <!-- /.navbar-header -->
@@ -96,7 +96,17 @@
             <ul class="nav navbar-nav navbar-right">
                 <li> <a style="" href="create.html">Setting</a> 
                 				</li>
-                <li> <a href="javascript:;">Resources</a> </li>
+                <li class="dropdown navbar-languages"> 
+					<a href="#" data-toggle="dropdown" role="button" aria-expanded="false">Languages <i class="fa fa-caret-down"></i></a>
+					<ul class="dropdown-menu" role="menu">
+                        <li>
+                            <a href="page-profile.html"> <i class="fa fa-user"></i> &nbsp;&nbsp;English </a>
+                        </li>
+                        <li>
+                            <a href="page-pricing.html"> <i class="fa fa-dollar"></i> &nbsp;&nbsp;Vietnamese </a>
+                        </li>
+                    </ul>
+				</li>
                 <li class="dropdown navbar-profile">
                     <a style="  padding-top: 10px; height: 44px;" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false"> <img src="assets/images/avar/default-user.png" alt="" style="vertical-align: middle;" width="25"> <span class="navbar-profile-label">cminhho</span> <i class="fa fa-caret-down"></i> </a>
                     <ul class="dropdown-menu" role="menu">
