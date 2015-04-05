@@ -35,6 +35,10 @@
 	<div class="content">
 		<div class="container">
 			<div class="row">
+				<div class="small-header">
+				<h1 class="page-heading">Calendar <small>your overtime</small></h1> </div>
+			</div>
+			<div class="row">
 				<div id='calendar'></div>
 			</div>
 		</div>
@@ -65,8 +69,8 @@
 				right: 'month,agendaWeek,agendaDay'
 			},
 			defaultDate: '2015-04-4',
-			editable: true,
-			eventLimit: true, // allow "more" link when too many events
+			editable: false,
+			eventLimit: false, // allow "more" link when too many events
 			events: [
 				{
 					title: 'All Day Event',

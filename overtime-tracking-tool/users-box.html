@@ -51,23 +51,21 @@
     <!-- /section#mainnav -->
     <div class="content">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 action-nav" style="margin-top: -20px">
-					<div class="col-md-6 title pull-left">
-						<h2 class="title">Users</h2>
-					</div>
-                    
-					<div class="col-md-6 action pull-right">
-						<button class="btn btn-primary mainnav-form pull-right btn-search-collapse" id="btn-search-collapse" style="border-radius: 100px;border: 0px;"><i class="fa fa-search"></i></button>
-						<form class="mainnav-form pull-right btn-search" role="search" style="display: none">
-							<input type="text" class="form-control input-md mainnav-search-query" placeholder="Search">
-							<button class="btn btn-sm mainnav-form-btn"><i class="fa fa-search"></i></button>
+			<div class="row" >
+				<div class="small-header">
+					<div id="hbreadcrumb" class="pull-right m-t-lg">
+						<a href="add-user.html" class="btn btn-xs btn-warning" style="  margin: 3px 10px;"><i class="fa fa-plus"></i> Add User</a>
+						<form class="pull-right btn-search" role="search" style="position: relative">
+							<input type="text" class="form-control input-md mainnav-search-query" placeholder="Search" style="border-radius: 100px; height: 30px;">
+							<button class="btn btn-sm mainnav-form-btn" style="  top: 0px;"><i class="fa fa-search"></i></button>
 						</form>
-						
 					</div>
-                    <hr />
-                </div>
-				<div class="col-md-12">
+					<h1 class="page-heading">Users <small>List of Users</small></h1>
+				</div>
+			</div>
+                    
+            <div class="row">
+				<div class="boxes">
 					<div id="UserBoxesSearchresult"></div>
 				</div>
                 <div class="pull-right">
@@ -97,7 +95,7 @@
                     var newcontent = '';
                     // Iterate through a selection of the content and build an HTML string
                     for (var i = page_index * items_per_page; i < max_elem; i++) {
-                        newcontent += '<div class="col-md-4"> <div class="the-box"> <div class="media user-card-sm"> <a href="" class="pull-left"> <img src="assets/images/avar/default-user.png" class="media-object img-circle" width="50px" height="50px" alt="" /> </a> </div> <div class="media-body"> <h4 class="media-heading"><a href="page-profile.html">' + members[i][0] + '</a></h4> <p class="text-primary project btn btn-xs btn-warning"><a href="project-single.html" style="color: white">' + members[i][3] + '</a></p> </div> <div class="media-footer"></div> </div> </div>'
+                        newcontent += '<div class="col-md-4"> <div class="the-box"> <div class="media user-card-sm"> <a href="" class="pull-left"> <img src="assets/images/avar/default-user.png" class="media-object img-circle" width="50px" height="50px" alt="" /> </a> </div> <div class="media-body"> <h4 class="media-heading"><a href="page-profile.html">' + members[i][0] + '</a></h4> <p class="text-primary project btn btn-xs btn-success"><a href="project-single.html" style="color: white">' + members[i][3] + '</a></p> </div> <div class="media-footer"></div> </div> </div>'
                     }
                     // Replace old content with new content
                     $('#UserBoxesSearchresult').html(newcontent);

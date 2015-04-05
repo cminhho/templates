@@ -20,6 +20,10 @@
 .projects .hpanel{
 	margin-bottom: 25px
 }
+.projects .hpanel p, small{
+	font-size: 13px;
+	color: #6a6c6f;
+}
 .projects .hpanel.hgreen{
 	border-top: 2px solid #62cb31;
 }	
@@ -48,7 +52,7 @@
 }
 
 .projects .project-info {
-  text-align: right;
+	text-align: center;
 }
 
 .m-t-md {
@@ -62,6 +66,11 @@
   font-size: 90%;
   background: #f7f9fa;
 }
+@media (max-width: 768px){}
+.projects .project-info {
+  text-align: center;
+}
+}
 	</style>
 </head>
 <body>
@@ -72,28 +81,13 @@
     <div class="content">
         <div class='container'>
         <div class="row" >
-            <div class="panel-body">
-                <div id="hbreadcrumb" class="pull-right m-t-lg">
-                    <ol class="hbreadcrumb breadcrumb">
-                        <li><a ui-sref="dashboard" href="#/dashboard">Dashboard</a></li>
-                        <li>
-                            <span>App Views</span>
-                        </li>
-						<li>
-                            <span>Projects</span>
-                        </li>
-                    </ol>
-                </div>
-				<div class=" pull-left" style="  margin-top: -25px;">
-					<h2 class="font-light m-b-xs ng-binding">
-						Projects
-					</h2>
-					<small class="ng-binding">List of projects.</small>
-				</div>
-                
-            </div>
+			<div class="small-header">
+					<div id="hbreadcrumb" class="pull-right m-t-lg">
+					<button class="btn btn-md btn-xs btn-warning"><i class="fa fa-plus"></i> Add Project</button>
+					</div>
+					<h1 class="page-heading">Projects <small>List of projects</small></h1>
+			</div>
         </div>
-		
 			<div class="row projects">
 				<div class="col-lg-6">
 					<div class="hpanel hgreen">
@@ -126,7 +120,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 project-info">
+								<div class="col-sm-4 project-info text-center">
 									<div class="project-action m-t-md">
 										<div class="btn-group">
 											<button class="btn btn-xs btn-default"> View</button>
@@ -138,6 +132,8 @@
 										<h2 class="text-success">44</h2>
 									</div>
 									<div class="project-people">
+										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
+										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
@@ -186,7 +182,7 @@
 								</div>
 								
 								</div>
-								<div class="col-sm-4 project-info">
+								<div class="col-sm-4 project-info text-center">
 									<div class="project-action  m-t-md">
 										<div class="btn-group">
 											<button class="btn btn-xs btn-default"> View</button>
@@ -198,6 +194,8 @@
 										<h2 class="text-warning">50</h2>
 									</div>
 									<div class="project-people">
+										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
+										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
@@ -244,7 +242,7 @@
 										</div>
 									</div>
 								</div>
-								<div class="col-sm-4 project-info">
+								<div class="col-sm-4 project-info text-center">
 									<div class="project-action  m-t-md">
 										<div class="btn-group">
 											<button class="btn btn-xs btn-default"> View</button>
@@ -256,6 +254,8 @@
 										<h2 class="text-success">44</h2>
 									</div>
 									<div class="project-people">
+										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
+										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
@@ -304,7 +304,7 @@
 								</div>
 								
 								</div>
-								<div class="col-sm-4 project-info">
+								<div class="col-sm-4 project-info text-center">
 									<div class="project-action  m-t-md">
 										<div class="btn-group">
 											<button class="btn btn-xs btn-default"> View</button>
@@ -316,6 +316,8 @@
 										<h2 class="text-warning">50</h2>
 									</div>
 									<div class="project-people">
+										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
+										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />
 										<img src="assets/images/avar/default-user.png" alt="" width="28px" height="28px" class="img-circle" />

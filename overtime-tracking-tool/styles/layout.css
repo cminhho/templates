@@ -6,7 +6,6 @@ html, body, div, span, applet, object, iframe, blockquote, pre, a, abbr, acronym
   padding: 0;
   border: 0;
   font-size: 100%;
-  font: inherit;
   vertical-align: baseline;
 }
 
@@ -95,7 +94,7 @@ body {
 
 .mainnav {
   position: relative;
-  margin-bottom: 40px;
+  margin-bottom: 0px;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
 }
@@ -208,7 +207,7 @@ body {
     overflow: visible !important;
   }
   .mainnav-form {
-    margin-top: 15px;
+    margin-top: 17px;
   }
   .mainnav-search-query {
     width: 300px;
@@ -342,6 +341,25 @@ body {
   box-shadow: inset 8px 0px 15px -10px rgba(0, 0, 0, 0.2);
 }
 
+/* small header */
+.small-header{
+	padding: 0 15px 0 15px;
+}
+
+.small-header h1.page-heading {
+  padding: 5px 0;
+  margin: 15px 0 20px;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 100%;
+  text-transform: uppercase;
+  color: #656D78;
+}
+.small-header h1.page-heading small {
+  text-transform: none;
+  color: #ACB5BE;
+}
+
 
 h2.title{
 	font-size: 30px;
@@ -357,7 +375,6 @@ h2.title{
   position: relative;
   top: 1px;
   padding-right: 1em;
-  margin-top: 20px;
   padding-bottom: 15px;
   color: #444;
   text-decoration: none;
@@ -453,6 +470,3 @@ line-height: 40px;
 text-align: center;
   height: 120px;
 }
-
-
-
