@@ -15,4 +15,6 @@ jQuery: https://jquery.com/
 
 DataTables Table plug-in for jQuery: https://www.datatables.net/
 
+jQuery Pagination Plugin: http://www.jqueryrain.com/?LrBTd8qK
+
 Bootstrap Multiselect: http://www.jqueryscript.net/other/Responsive-jQuery-Message-Box-Notification-Plugin-lobibox.html
