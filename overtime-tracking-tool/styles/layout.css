@@ -396,6 +396,16 @@ h2.title{
 
 /* button */
 
+
+/* dataTable */
+
+			table .description{
+				font-size: 13px;
+			}
+			table .user-info{
+				margin-left: 35px;
+				padding-left: 15px;
+			}
   
 /* Input Styles */
 
