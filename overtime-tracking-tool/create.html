@@ -50,18 +50,25 @@
 						<h4 class="content-title"><u>Infomation</u></h4>
                             <!-- Name -->
                             <input type="text" name="name" id="name" required="required" class="form-submit form-control" placeholder="Subject" autofocus/>
-                            <!-- Email -->
-                            <input type="date" name="time" id="time" required="required" class="form-submit form-control" placeholder="Time" />
                             <!-- Subject -->
                             <input type="text" name="project" id="project" required="required" class="form-submit form-control" placeholder="Project" />
                         </div><!-- End Left Inputs -->
                         <!-- Right Inputs -->
 						
                         <div class="col-md-6 wow animated slideInRight">
-						<h4 class="content-title"><u>Contain</u></h4>
+						<h4 class="content-title"><u>Time</u></h4>
                             <!-- Message -->
-                            <textarea name="message" id="message" class="form-submit form-control textarea"  placeholder="Message"></textarea>
-                        </div><!-- End Right Inputs -->
+                            <!-- Time -->
+                            <input type="date" name="time" id="time" required="required" class="form-submit form-control" placeholder="Time" />
+                            <div class="row">
+                            	<div class="col-md-6">
+									<input type="time" id="form" class="form-submit form-control" placeholder="form"/>
+								</div>
+								<div class="col-md-6">
+									<input type="time" id="form" class="form-submit form-control" placeholder="form"/>
+								</div>
+                            </div>
+						</div><!-- End Right Inputs -->
                         
 						
 						<div class="relative fullwidth col-xs-12">
@@ -88,14 +95,6 @@
                         <!-- Clear -->
                         <div class="clear"></div>
                     </form>
-
-                    <!-- Your Mail Message -->
-                    <div class="mail-message-area">
-                        <!-- Message -->
-                        <div class="alert gray-bg mail-message not-visible-message">
-                            <strong>Thank You !</strong> Your email has been delivered.
-                        </div>
-                    </div>
 
                 </div><!-- End Contact Form Area -->
             </div><!-- End Inner -->
