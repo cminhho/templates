@@ -13,7 +13,6 @@
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
-    <link rel="stylesheet" href="">
     <link rel="stylesheet" href="src/styles/layout.css">
     <!-- endbuild -->
 </head>
@@ -26,6 +25,9 @@
 <!-- Add your site or application content here -->
 <header data-ng-include="'src/modules/layout/header/header.html'"></header>
 <!--/header-->
+
+<nav data-ng-include="'src/modules/layout/nav/mainnav.html'"></nav>
+<!--/nav-->
 
 <section class="container-fluid" ui-view></section>
 <!--/container-->
@@ -50,9 +52,9 @@
 
 <!-- build:js({.tmp,app}) scripts/scripts.js -->
 <script src="src/modules/app.js"></script>
-<script src="src/modules/app.run.js"></script>
-<script src="src/modules/app.config.js"></script>
-<script src="src/modules/app.ctrl.js"></script>
+<script src="src/modules/app/app.run.js"></script>
+<script src="src/modules/app/app.config.js"></script>
+<script src="src/modules/app/app.ctrl.js"></script>
 
 <script src="src/modules/home/home.ctrl.js"></script>
 <script src="src/modules/home/home.js"></script>

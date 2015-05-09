@@ -16,6 +16,11 @@
 		.module('app.ctrl', [])
 		.controller('AppCtrl', AppCtrl);
 
-		function AppCtrl(){
+		function AppCtrl($scope){
+			$scope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState, fromParams){
+				if ( angular.isDefined( toState['name'] ) ) {
+					document.title = toState['name'];
+				}
+			});
 		}
 })();

@@ -19,7 +19,7 @@
 		.config(HomeConfig);
 
 	function HomeConfig($stateProvider) {
-		$stateProvider.state( 'home', {
+		$stateProvider.state( 'Dashboard', {
 			url: '/',
 			views: {
 				'@': {
