@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <!-- Pagination core CSS -->
+    <link rel="stylesheet" href="vendor/pagination/pagination.css" />
+    <!-- App CSS -->
+    <link rel="stylesheet" href="styles/layout.css">
+    <meta name="description" content="Overtime Tracking Tool">
+    <meta name="author" content="">
+    <link rel="icon" href="favicon.ico">
+    <title>Overtime Tracking Tool</title>
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+
+<body>
+    <style type="text/css">
+        .the-box {
+            padding: 15px;
+            margin-bottom: 30px;
+            background: #fff;
+            border: 1px solid #D5DAE0;
+            position: relative;
+        }
+        
+        .user-card-sm {
+            position: relative;
+            display: inline;
+        }
+        
+        .media-left,
+        .media>.pull-left {
+            padding-right: 10px;
+        }
+        
+        .the-box .media-body .project {
+            font-size: 13px;
+        }
+    </style>
+    <header id="ott-header"></header>
+    <!-- /header -->
+    <section id="oot-mainnav"></section>
+    <!-- /section#mainnav -->
+    <div class="content">
+        <div class="container">
+			<div class="row" >
+				<div class="small-header">
+					<div id="hbreadcrumb" class="pull-right m-t-lg">
+						<a href="add-user.html" class="btn btn-xs btn-warning" style="  margin: 3px 10px;"><i class="fa fa-plus"></i> Add User</a>
+						<form class="pull-right btn-search" role="search" style="position: relative">
+							<input type="text" class="form-control input-md mainnav-search-query" placeholder="Search" style="border-radius: 100px; height: 30px;">
+							<button class="btn btn-sm mainnav-form-btn" style="  top: 0px;"><i class="fa fa-search"></i></button>
+						</form>
+					</div>
+					<h1 class="page-heading">Users <small>List of Users</small></h1>
+				</div>
+			</div>
+                    
+            <div class="row">
+				<div class="boxes">
+					<div id="UserBoxesSearchresult"></div>
+				</div>
+                <div class="pull-right">
+                    <div id="Pagination" class="pagination"> </div>
+                </div>
+            </div>
+            <!-- /.container -->
+        </div>
+        <!-- /#wrapper -->
+        <footer id="ott-footer"></footer>
+        <!-- Placed at the end of the document so the pages load faster -->
+        <script src="vendor/jquery/jquery.min.js"></script>
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+        <!-- Load data to paginate -->
+        <script type="text/javascript" src="vendor/pagination/members.js"></script>
+        <script src="scripts/main.js"></script>
+        <script type="text/javascript" src="vendor/pagination/jquery.min.js"></script>
+        <script src="vendor/pagination/jquery.pagination.js"></script>
+        <!-- Load data to paginate -->
+        <script type="text/javascript" src="vendor/pagination/members.js"></script>
+		
+        <script type="text/javascript">
+            function pageselectCallback(page_index, jq) {
+                    // Get number of elements per pagionation page from form
+                    var items_per_page = 18;
+                    var max_elem = Math.min((page_index + 1) * items_per_page, members.length);
+                    var newcontent = '';
+                    // Iterate through a selection of the content and build an HTML string
+                    for (var i = page_index * items_per_page; i < max_elem; i++) {
+                        newcontent += '<div class="col-md-4"> <div class="the-box"> <div class="media user-card-sm"> <a href="" class="pull-left"> <img src="assets/images/avar/default-user.png" class="media-object img-circle" width="50px" height="50px" alt="" /> </a> </div> <div class="media-body"> <h4 class="media-heading"><a href="page-profile.html">' + members[i][0] + '</a></h4> <p class="text-primary project btn btn-xs btn-success"><a href="project-single.html" style="color: white">' + members[i][3] + '</a></p> </div> <div class="media-footer"></div> </div> </div>'
+                    }
+                    // Replace old content with new content
+                    $('#UserBoxesSearchresult').html(newcontent);
+                    // Prevent click eventpropagation
+                    return false;
+                }
+                // The form contains fields for many pagiantion optiosn so you can
+                // quickly see the resuluts of the different options.
+                // This function creates an option object for the pagination function.
+                // This will be be unnecessary in your application where you just set
+                // the options once.
+            function getOptionsFromForm() {
+                    var opt = {
+                        callback: pageselectCallback
+                    };
+                    return opt;
+                }
+                // When document has loaded, initialize pagination and form
+            $(document).ready(function() {
+                // Create pagination element with options from form
+                var optInit = getOptionsFromForm();
+                $("#Pagination").pagination(members.length, optInit);
+				
+            });
+        </script>
+</body>
+
+</html>

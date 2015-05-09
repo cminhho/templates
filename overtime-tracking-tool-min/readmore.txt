@@ -1,0 +1,26 @@
+Credit:
+Google Font: http://fonts.googleapis.com/css?family=Lato:100,200,300,400,500,600,700
+
+Twitter Bootstrap: http://getbootstrap.com/
+
+Font Awesome: http://fortawesome.github.io/Font-Awesome/
+
+Summernote: http://summernote.org
+
+sweetalert: http://lipis.github.io/bootstrap-sweetalert/
+
+FullCalendar: http://fullcalendar.io/
+
+jQuery: https://jquery.com/
+
+DataTables Table plug-in for jQuery: https://www.datatables.net/
+
+jQuery Pagination Plugin: http://www.jqueryrain.com/?LrBTd8qK
+
+Bootstrap Multiselect: http://www.jqueryscript.net/other/Responsive-jQuery-Message-Box-Notification-Plugin-lobibox.html
+
+
+http://webapplayers.com/homer_admin-v1.4/index.html#/app_views/profile
+http://www.cliptheme.com/demo/clip-two/AngularJs-Admin/STANDARD/#/app/pages/user
+http://diliat.in/themeforest/sentir/1.3.0/element-wyswyg.html#fakelink
+http://www.jqueryrain.com/themes
