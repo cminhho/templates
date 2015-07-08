@@ -1,0 +1,79 @@
+<!doctype html>
+<html class="no-js" ng-app="ClearOneApp">
+<head>
+    <meta charset="utf-8">
+    <base href="/clearone/">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width">
+    <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+    <!-- build:css(.) styles/vendor.css -->
+    <!-- bower:css -->
+    <!-- <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" /> -->
+    <!-- endbower -->
+    <!-- endbuild -->
+    <!-- build:css(.tmp) styles/main.css -->
+    <link rel="stylesheet" href="src/styles/layout.css">
+    <!-- endbuild -->
+</head>
+<body data-ng-controller="AppCtrl">
+<!--[if lt IE 7]>
+<p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+<header data-ng-include="'src/modules/layout/header/header.html'"></header>
+<!--/header-->
+
+<nav data-ng-include="'src/modules/layout/nav/mainnav.html'"></nav>
+<!--/nav-->
+
+<section class="container" ui-view></section>
+<!--/container-->
+
+<footer data-ng-include="'src/modules/layout/footer/footer.html'"></footer>
+<!--/footer-->
+
+<!-- build:js(.) scripts/vendor.js -->
+<!-- bower:js -->
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/angular-animate/angular-animate.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+<script src="bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
+<script src="bower_components/angular-touch/angular-touch.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="bower_components/restangular/dist/restangular.min.js"></script>
+<script src="bower_components/lodash/lodash.min.js"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/angular-ui-bootstrap/0.12.1/ui-bootstrap-tpls.min.js"></script>
+<!-- endbower -->
+<!-- endbuild -->
+
+<!-- build:js({.tmp,app}) scripts/scripts.js -->
+<!--modules-->
+<script src="src/app.js"></script>
+<!--<script src="src/modules/app/app.run.js"></script>-->
+<!--<script src="src/modules/app/app.config.js"></script>-->
+<!--<script src="src/modules/app/app.ctrl.js"></script>-->
+
+<script src="src/modules/home/home.js"></script>
+<script src="src/modules/home/home.ctrl.js"></script>
+
+<script src="src/modules/devices/devices.js"></script>
+<script src="src/modules/devices/devices.ctrl.js"></script>
+
+<!--resources-->
+<script src="src/common/resources/home.js"></script>
+
+<!--services-->
+<script src="src/common/services/modalService.js"></script>
+
+<!--directives-->
+<script src="src/common/directives/dynamicTemplate/dynamicTemplate.js"></script>
+<!-- endbuild -->
+</body>
+</html>

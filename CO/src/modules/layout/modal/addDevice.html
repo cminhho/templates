@@ -1,0 +1,18 @@
+
+    <div class="modal-header">
+        <button type="button" data-ng-click="cancel()" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+        <h4 class="modal-title">Create new device</h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <div class="col-md-12">
+                <dynamic-template type="type"><dynamic-template/>
+            </div>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <input tabindex="0" type="submit" class="btn btn-primary" data-dismiss="modal" data-ng-click="ok()"
+               value="OK">
+        <input tabindex="1" type="button" class="btn btn-default" data-dismiss="modal" value="Cancel"
+               data-ng-click="cancel()">
+    </div>
